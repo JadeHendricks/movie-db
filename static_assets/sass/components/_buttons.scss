@@ -1,0 +1,47 @@
+.button {
+  height: 4.5rem;
+  border: 0;
+  background-color: transparent;
+  text-align: center;
+  padding: 0 5rem;
+  color: $white;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include shadow;
+  transition: 0.4s all;
+  &--white {
+    background-color: $white;
+    color: $lightBlue;
+    &:hover {
+      background-color: darken($white, 20%);
+    }
+  }
+  &--lightBlue {
+    background-color: $lightBlue;
+    &:hover {
+      background-color: darken($lightBlue, 20%);
+    }
+  }
+  &--skeleton {
+    border: 0.1rem solid $lightBlue;
+    color: $lightBlue;
+    &:hover {
+      background-color: $white;
+      border: 0.1rem solid $white;
+    }
+  }
+
+  &:hover .button--move {
+    transform: translateY(-1rem);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .button {
+    padding: 0 3rem;
+    font-size: 1.2rem;
+  }
+}

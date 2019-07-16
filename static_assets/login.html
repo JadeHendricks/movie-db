@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <title>MovieDB</title>
+  </head>
+  <body>
+    <div class="navSpacer"></div>
+    <nav class="nav">
+      <div class="container">
+        <div class="nav__container">
+          <a class="nav__logo" href="/">MovieDB</a>
+          <div class="nav__searchContainer">
+            <svg class="nav__searchIcon">
+              <use xlink:href="images/sprite.svg#icon-magnifying-glass"></use>
+            </svg>
+            <input
+              class="nav__search input"
+              type="search"
+              name="search"
+              placeholder="Search..."
+            />
+          </div>
+          <ul class="nav__ul">
+            <li class="nav__li">
+              <button
+                class="button button--skeleton"
+                onclick="location.href='#'"
+                type="button"
+              >
+                Log in
+              </button>
+            </li>
+            <li class="nav__li">
+              <button
+                class="button button--lightBlue"
+                onclick="location.href='./signup.html'"
+                type="button"
+              >
+                Sign up
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="authentication">
+      <form>
+        <div class="card formCard">
+          <h3 class="card__title">LOG INTO YOUR ACCOUNT</h3>
+          <div class="formGroup">
+            <label for="emailAddress" class="formGroup__label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              id="emailAddress"
+              class="input--grey"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="formGroup">
+            <label for="password" class="formGroup__label">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="input--grey"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button class="button button--lightBlue" type="submit">
+            Login
+          </button>
+        </div>
+      </form>
+    </section>
+    <div class="footerSpacer"></div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <a class="footer__logo" href="/">MovieDB</a>
+          <ul class="footer__ul">
+            <li class="footer__li">Profile</li>
+            <li class="footer__li">About</li>
+            <li class="footer__li">Terms of Service</li>
+            <li class="footer__li">Contact</li>
+          </ul>
+          <ul class="footer__ul">
+            <li class="footer__li">
+              <svg class="footer__icon">
+                <use
+                  xlink:href="images/sprite.svg#icon-facebook-with-circle"
+                ></use>
+              </svg>
+            </li>
+            <li class="footer__li">
+              <svg class="footer__icon">
+                <use
+                  xlink:href="images/sprite.svg#icon-twitter-with-circle"
+                ></use>
+              </svg>
+            </li>
+            <li class="footer__li">
+              <svg class="footer__icon">
+                <use
+                  xlink:href="images/sprite.svg#icon-pinterest-with-circle"
+                ></use>
+              </svg>
+            </li>
+            <li class="footer__li">
+              <svg class="footer__icon">
+                <use
+                  xlink:href="images/sprite.svg#icon-instagram-with-circle"
+                ></use>
+              </svg>
+            </li>
+            <li class="footer__li">
+              <svg class="footer__icon">
+                <use
+                  xlink:href="images/sprite.svg#icon-youtube"
+                  title="test"
+                  alt="test"
+                ></use>
+              </svg>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__bottom">
+          Copyright© 2019 <strong>MOVIEDB</strong>. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./node_modules/slick-carousel/slick/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

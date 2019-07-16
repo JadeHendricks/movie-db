@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <title>MovieDB</title>
+  </head>
+  <body>
+    <div class="navSpacer"></div>
+    <nav class="nav">
+      <div class="container">
+        <div class="nav__container">
+          <a class="nav__logo" href="/">MovieDB</a>
+          <div class="nav__searchContainer">
+            <svg class="nav__searchIcon">
+              <use xlink:href="images/sprite.svg#icon-magnifying-glass"></use>
+            </svg>
+            <input
+              class="nav__search input"
+              type="search"
+              name="search"
+              placeholder="Search..."
+            />
+          </div>
+          <ul class="nav__ul nav__ul--loggedIn">
+            <li class="nav__li">
+              <div>
+                <svg class="nav__usernav-icon">
+                  <use xlink:href="images/sprite.svg#icon-home"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="nav__li">
+              <div>
+                <svg class="nav__usernav-icon">
+                  <use xlink:href="images/sprite.svg#icon-user"></use>
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./node_modules/slick-carousel/slick/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

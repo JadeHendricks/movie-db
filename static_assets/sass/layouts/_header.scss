@@ -1,0 +1,95 @@
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) center
+      center / cover no-repeat,
+    url("https://cdn.wallpapersafari.com/4/44/YfT0Oo.jpg") top center/cover
+      no-repeat;
+}
+.headerMainMovie {
+  padding: 42rem 0 4rem 0;
+  color: $white;
+  &__title {
+    color: currentColor;
+    margin-bottom: 0.5rem;
+    @include ellipses;
+    width: 100%;
+  }
+  &__ul {
+    display: flex;
+    list-style-type: none;
+  }
+  &__li {
+    margin-right: 1rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.headerActor {
+  padding: 42rem 0 4rem 0;
+  color: $white;
+  display: flex;
+  justify-content: flex-start;
+  &__image {
+    margin-right: 1.5rem;
+    height: 18rem;
+  }
+  &__information {
+    padding: 1rem;
+  }
+  &__name {
+    margin-bottom: 0.5rem;
+  }
+  &__ul {
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 0.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &--dob {
+      color: $grey2;
+    }
+  }
+  &__li {
+    margin-right: 0.5rem;
+    font-size: 1.6rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .headerMainMovie {
+    padding: 20rem 0 4rem 0;
+    &__title {
+      color: currentColor;
+      margin-bottom: 0.5rem;
+    }
+    &__ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+    }
+    &__li {
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .headerActor {
+    padding: 10rem 0 4rem 0;
+    &__information {
+      padding: 1rem;
+    }
+    &__name {
+      margin-bottom: 0.5rem;
+    }
+    &__li {
+      font-size: 1.4rem;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+*,
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+input,
+select,
+textarea {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 4.2rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.4rem;
+}
+h5 {
+  font-size: 2rem;
+}
+h6 {
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+p,
+ul,
+li {
+  font-size: 1.4rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.6rem;
+  }
+  h6 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+  }
+  h5 {
+    font-size: 1.4rem;
+  }
+  h6 {
+    font-size: 1.2rem;
+  }
+}
