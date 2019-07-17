@@ -31,7 +31,6 @@ const MovieSummary = ({ match }) => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${match.params.id}/credits?api_key=${API_KEY}&language=en-US&page=1`);
     const data = await response.json();
     setCast(data.cast.slice(0, 10))
-    console.log(data.cast)
   }
   
 

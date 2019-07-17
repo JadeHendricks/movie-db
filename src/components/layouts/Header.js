@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const Header = ({ movie: { backdrop_path, title, overview, release_date, original_language, vote_average, revenue } }) => {
+const Header = ({ movie: { backdrop_path, title, overview, release_date, original_language, vote_average, revenue, id } }) => {
 
   const headerBackgroundImage = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original${backdrop_path})`,
@@ -24,9 +25,12 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
             </li>
           </ul>
           <ul className="headerMainMovie__ul marginTop30">
-            <li className="headerMainMovie__li">
-              <button className="button button--lightBlue">View info</button>
-            </li>
+            { 
+              window.location.href.endsWith(`${id}`) ? null : 
+              <li className="headerMainMovie__li">
+                <Link to={`/movie-summary/${id}`} className="button button--lightBlue">View info</Link>
+              </li>
+            }
             <li className="headerMainMovie__li">
               <button className="button button--white">Watch now</button>
             </li>
