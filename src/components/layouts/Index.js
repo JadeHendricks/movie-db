@@ -7,15 +7,23 @@ import MovieSlider from "../slider/MovieSlider";
 const Index = () => {
   const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
   
+  const [mostPopularMovie, setMostPopularMovie] = useState({});
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   
   useEffect(() => {
+    getMostPopularMovie();
     getPopularMovies();
     getUpcomingMovies();
     getTopRatedMovies();
   }, [])
+
+  const getMostPopularMovie = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`);
+    const data = await response.json();
+    setMostPopularMovie(data.results[0]);
+  }
 
   const getPopularMovies = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`);
@@ -34,10 +42,11 @@ const Index = () => {
     const data = await response.json();
     setTopRatedMovies(data.results);
   }
+  
 
   return (
     <Fragment>
-      <Header />
+      <Header movie={mostPopularMovie}/>
       <Cards />
       <CTA />
       <MovieSlider slide={popularMovies} />
