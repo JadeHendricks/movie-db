@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import svg from "../../images/sprite.svg";
 
-const ActorSlider = () => {
+const ActorSlider = ({ cast }) => {
 
   const settings = {
     dots: false,
@@ -24,42 +24,20 @@ const ActorSlider = () => {
   return (
     <div className="container">
       <div className="heading">
-        <h3 className="heading-title">Lorem ipsum dolor sit.</h3>
+        <h3 className="heading-title">CAST</h3>
         <p className="heading__content">
           Iure ab, accusantium corrupti quos aspernatur qui.
         </p>
       </div>
       <Slider {...settings} className="actorSlider">
-        <div className="actorSliderSlide">
+      {cast.map(actor => (
+        <div key={actor.id} className="actorSliderSlide">
           <a href="/" className="actorSliderSlide__link">
-            <img className="actorSliderSlide__image" src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="" />
-            <span className="actorSliderSlide__name">Tom Hanks</span>
+            <img className="actorSliderSlide__image" src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={ actor.name } />
+            <span className="actorSliderSlide__name">{ actor.name }</span>
           </a>
         </div>
-        <div className="actorSliderSlide">
-          <a href="/" className="actorSliderSlide__link">
-            <img className="actorSliderSlide__image" src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="" />
-            <span className="actorSliderSlide__name">Tom Hanks</span>
-          </a>
-        </div>
-        <div className="actorSliderSlide">
-          <a href="/" className="actorSliderSlide__link">
-            <img className="actorSliderSlide__image" src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="" />
-            <span className="actorSliderSlide__name">Tom Hanks</span>
-          </a>
-        </div>
-        <div className="actorSliderSlide">
-          <a href="/" className="actorSliderSlide__link">
-            <img className="actorSliderSlide__image" src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="" />
-            <span className="actorSliderSlide__name">Tom Hanks</span>
-          </a>
-        </div>
-        <div className="actorSliderSlide">
-          <a href="/" className="actorSliderSlide__link">
-            <img className="actorSliderSlide__image" src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="" />
-            <span className="actorSliderSlide__name">Tom Hanks</span>
-          </a>
-        </div>
+      ))}
       </Slider>
     </div>
   )
