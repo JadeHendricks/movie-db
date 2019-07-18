@@ -8,32 +8,32 @@ const Profile = () => {
           <div className="profileCard__top">
             <h3 className="card__title">YOUR ACCOUNT SETTINGS</h3>
             <div className="formGroup">
-              <label for="name" className="formGroup__label">Name</label>
+              <label htmlFor="name" className="formGroup__label">Name</label>
               <input type="text" id="name" className="input--grey" placeholder="Your Name" />
             </div>
             <div className="formGroup">
-              <label for="emailAddress" className="formGroup__label">Email address</label>
+              <label htmlFor="emailAddress" className="formGroup__label">Email address</label>
               <input type="email" id="emailAddress" className="input--grey" placeholder="you@example.com" />
             </div>
             <div className="formGroup photoUpload">
               <img className="photoUpload__userPhoto" src="https://www.thelocal.se/userdata/images/article/6d67730d16af04f3f956389d4cc244af808b8381c23b1e3d218ecd792de14fa8.jpg" alt="" />
               <input className="photoUpload__upload" type="file" accept="image/*" id="photo" name="photo" />
-              <label for="photo">Choose new photo</label>
+              <label htmlFor="photo">Choose new photo</label>
             </div>
             <button className="button button--lightBlue" type="submit">Save Settings</button>
           </div>
           <div className="profileCard__bottom">
             <h3 className="card__title">PASSWORD CHANGE</h3>
             <div className="formGroup">
-              <label for="confirmPassword" className="formGroup__label">Current password</label>
+              <label htmlFor="confirmPassword" className="formGroup__label">Current password</label>
               <input type="password" id="currentPassword" className="input--grey" placeholder="••••••••" />
             </div>
             <div className="formGroup">
-              <label for="confirmPassword" className="formGroup__label">New password</label>
+              <label htmlFor="confirmPassword" className="formGroup__label">New password</label>
               <input type="password" id="newPassword" className="input--grey" placeholder="••••••••" />
             </div>
             <div className="formGroup">
-              <label for="confirmPassword" className="formGroup__label">Confirm password</label>
+              <label htmlFor="confirmPassword" className="formGroup__label">Confirm password</label>
               <input type="password" id="confirmPassword" className="input--grey" placeholder="••••••••" />
             </div>
             <button className="button button--lightBlue" type="submit">Save Password</button>

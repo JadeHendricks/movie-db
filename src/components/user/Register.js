@@ -7,19 +7,19 @@ const Register = () => {
         <div className="card formCard">
           <h3 className="card__title">CREATE YOUR ACCOUNT!</h3>
           <div className="formGroup">
-            <label for="yourName" className="formGroup__label">Your name</label>
+            <label htmlFor="yourName" className="formGroup__label">Your name</label>
             <input type="text" id="yourName" className="input--grey" placeholder="Your name" required />
           </div>
           <div className="formGroup">
-            <label for="emailAddress" className="formGroup__label">Email address</label>
+            <label htmlFor="emailAddress" className="formGroup__label">Email address</label>
             <input type="email" id="emailAddress" className="input--grey" placeholder="you@example.com" required />
           </div>
           <div className="formGroup">
-            <label for="password" className="formGroup__label">Password</label>
+            <label htmlFor="password" className="formGroup__label">Password</label>
             <input type="password" id="password" className="input--grey" placeholder="••••••••" required/>
           </div>
           <div className="formGroup">
-            <label for="confirmPassword" className="formGroup__label">Confirm password</label>
+            <label htmlFor="confirmPassword" className="formGroup__label">Confirm password</label>
             <input type="password" id="confirmPassword" className="input--grey" placeholder="••••••••" required />
           </div>
           <button className="button button--lightBlue" type="submit">Sign up</button>
