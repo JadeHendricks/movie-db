@@ -1,48 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import svg from "../../images/sprite.svg";
+import { Link } from "react-router-dom"; 
 
 const SearchResults = () => {
+
+  const query = decodeURI(window.location.href.split("/").pop());
+
+  const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    fetchSearch();
+  },[results])
+
+  const fetchSearch = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`);
+    const data = await response.json();
+    setResults(data.results);
+    console.log(data.results)
+  }
+
   return (
     <section className="searchResults">
       <div className="container container--small">
-        <h2 className="searchResults__title">Search results for value</h2>
+        <h2 className="searchResults__title">Search results for {query}</h2>
         <div className="searchResults__wrapper">
-          <div className="searchCard">
-            <a href="/">
-              <img src="https://i.kinja-img.com/gawker-media/image/upload/s--BUtczaGT--/c_scale,f_auto,fl_progressive,q_80,w_800/zmodtux4b3urnluvrq5w.jpg" className="searchCard__image" alt="alt" title="title"></img>
-              <div className="searchCard__content">
-                <h5 className="searchCard__title">Move Title</h5>
-                <p className="searchCard__desc">Lorem ipsum dolor sit amet.</p>
-              </div>
-            </a>
-          </div>
-          <div className="searchCard">
-            <a href="/">
-              <img src="https://i.kinja-img.com/gawker-media/image/upload/s--BUtczaGT--/c_scale,f_auto,fl_progressive,q_80,w_800/zmodtux4b3urnluvrq5w.jpg" className="searchCard__image" alt="alt" title="title"></img>
-              <div className="searchCard__content">
-                <h5 className="searchCard__title">Move Title</h5>
-                <p className="searchCard__desc">Lorem ipsum dolor sit amet.</p>
-              </div>
-            </a>
-          </div>
-          <div className="searchCard">
-            <a href="/">
-              <img src="https://i.kinja-img.com/gawker-media/image/upload/s--BUtczaGT--/c_scale,f_auto,fl_progressive,q_80,w_800/zmodtux4b3urnluvrq5w.jpg" className="searchCard__image" alt="alt" title="title"></img>
-              <div className="searchCard__content">
-                <h5 className="searchCard__title">Move Title</h5>
-                <p className="searchCard__desc">Lorem ipsum dolor sit amet.</p>
-              </div>
-            </a>
-          </div>
-          <div className="searchCard">
-            <a href="/">
-              <img src="https://i.kinja-img.com/gawker-media/image/upload/s--BUtczaGT--/c_scale,f_auto,fl_progressive,q_80,w_800/zmodtux4b3urnluvrq5w.jpg" className="searchCard__image" alt="alt" title="title"></img>
-              <div className="searchCard__content">
-                <h5 className="searchCard__title">Move Title</h5>
-                <p className="searchCard__desc">Lorem ipsum dolor sit amet.</p>
-              </div>
-            </a>
-          </div>
+          {results.map(movie => (
+            <div key={ movie.id } className="searchCard">
+              <Link to={`/movie-summary/${movie.id}`}>
+                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className="searchCard__image" alt={ movie.title } title={ movie.title }></img>
+                <div className="searchCard__content">
+                  <h5 className="searchCard__title">{ movie.title }</h5>
+                  <p className="searchCard__desc">{ movie.vote_average }</p>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
         <div className="pagination">
             <div className="pagination__prev">
