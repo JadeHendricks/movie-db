@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from "react-slick";
 import svg from "../../images/sprite.svg";
+import { Link } from "react-router-dom";
 
 const ActorSlider = ({ cast }) => {
 
@@ -32,10 +33,10 @@ const ActorSlider = ({ cast }) => {
       <Slider {...settings} className="actorSlider">
       {cast.map(actor => (
         <div key={actor.id} className="actorSliderSlide">
-          <a href="/" className="actorSliderSlide__link">
+          <Link to={`/actor-summary/${actor.id}`} className="actorSliderSlide__link">
             <img className="actorSliderSlide__image" src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={ actor.name } />
             <span className="actorSliderSlide__name">{ actor.name }</span>
-          </a>
+          </Link>
         </div>
       ))}
       </Slider>

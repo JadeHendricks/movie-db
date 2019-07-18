@@ -1,26 +1,39 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Header from "../layouts/Header";
 
-const ActorSummary = () => {
+const ActorSummary = ({ match }) => {
+
+  const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
+
+  const [personData, setPersonData] = useState({});
+  const [movieCredits, setMovieCredits] = useState([]);
+
+  useEffect(() => {
+    fetchPerson();
+    fetchMovieCredits();
+  }, [])
+
+  const fetchPerson = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/person/${match.params.id}?api_key=${API_KEY}&language=en-US`);
+    const data = await response.json();
+    setPersonData(data);
+    console.log(data)
+  }
+
+  const fetchMovieCredits = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/person/${match.params.id}/movie_credits?api_key=${API_KEY}&language=en-US`);
+    const data = await response.json();
+    setMovieCredits(data.cast.slice(0, 5));
+  }
+
   return (
     <Fragment>
-      <Header />
       <section className="movieDetails">
         <div className="container">
           <div className="informationBlock box">
             <h4 className="informationBlock__title">Biography</h4>
             <p className="informationBlock__desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos
-              ex officiis id velit officia? Temporibus laudantium nesciunt, quae
-              adipisci ad numquam optio ab asperiores delectus repudiandae nostrum
-              odio. Ducimus, officia! Sit ipsum facilis veniam ipsa eaque qui
-              fugit, non rem corrupti debitis et facere est explicabo quam error
-              animi odio sapiente ducimus fugiat similique voluptas minus
-              pariatur? Voluptatum, nostrum voluptatem corporis veritatis debitis
-              id dolorum quibusdam fugit labore laboriosam quidem accusantium
-              itaque aut consectetur? At ut enim quaerat illum ipsum eos eum quia
-              repudiandae tempora maxime dicta error iure quidem omnis temporibus
-              magni delectus illo odit aut, recusandae vero!
+              {personData.biography}
             </p>
           </div>
         </div>
@@ -28,111 +41,25 @@ const ActorSummary = () => {
       <section className="actorRoles">
         <div className="container">
           <h3 className="actorRoles__title marginBottom30">Popular Roles</h3>
-          <div className="roles">
-            <div className="roles__top">
-              <a href="/" className="roles__link">
-                <img src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="alt" title="title" className="roles__image" />
-                <div>
-                  <h5 className="roles__title">This is the Title</h5>
-                  <p className="roles__role">This is the role</p>
-                </div>
-              </a>
+
+          {movieCredits.map(roles => (
+            <div key={ roles.id } className="roles">
+              <div className="roles__top">
+                <a href="/" className="roles__link">
+                  <img src={`https://image.tmdb.org/t/p/w185/${roles.backdrop_path}`} alt="alt" title="title" className="roles__image" />
+                  <div>
+                    <h5 className="roles__title">{ roles.title}</h5>
+                    <p className="roles__role">{ roles.character }</p>
+                    <p>{roles.release_date}</p>
+                  </div>
+                </a>
+              </div>
+              <p className="roles__desc">
+                { roles.overview }
+              </p>
             </div>
-            <p className="roles__desc">
-              At ut enim quaerat illum ipsum eos eum quia repudiandae tempora
-              maxime dicta error iure quidem omnis temporibus magni delectus illo
-              odit aut, recusandae vero! At ut enim quaerat illum ipsum eos eum
-              orem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos ex
-              officiis id velit officia? Temporibus laudantium nesciunt, quae
-              adipisci ad numquam optio ab asperiores delectus repudiandae nostrum
-              odio. Ducimus, officia! Sit ipsum facilis veniam ipsa eaque qui
-              fugit, non rem corrupti debitis et facer
-            </p>
-          </div>
-          <div className="roles">
-            <div className="roles__top">
-              <a href="/" className="roles__link">
-                <img src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="alt" title="title" className="roles__image" />
-                <div>
-                  <h5 className="roles__title">This is the Title</h5>
-                  <p className="roles__role">This is the role</p>
-                </div>
-              </a>
-            </div>
-            <p className="roles__desc">
-              At ut enim quaerat illum ipsum eos eum quia repudiandae tempora
-              maxime dicta error iure quidem omnis temporibus magni delectus illo
-              odit aut, recusandae vero! At ut enim quaerat illum ipsum eos eum
-              orem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos ex
-              officiis id velit officia? Temporibus laudantium nesciunt, quae
-              adipisci ad numquam optio ab asperiores delectus repudiandae nostrum
-              odio. Ducimus, officia! Sit ipsum facilis veniam ipsa eaque qui
-              fugit, non rem corrupti debitis et facer
-            </p>
-          </div>
-          <div className="roles">
-            <div className="roles__top">
-              <a href="/" className="roles__link">
-                <img src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="alt" title="title" className="roles__image" />
-                <div>
-                  <h5 className="roles__title">This is the Title</h5>
-                  <p className="roles__role">This is the role</p>
-                </div>
-              </a>
-            </div>
-            <p className="roles__desc">
-              At ut enim quaerat illum ipsum eos eum quia repudiandae tempora
-              maxime dicta error iure quidem omnis temporibus magni delectus illo
-              odit aut, recusandae vero! At ut enim quaerat illum ipsum eos eum
-              orem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos ex
-              officiis id velit officia? Temporibus laudantium nesciunt, quae
-              adipisci ad numquam optio ab asperiores delectus repudiandae nostrum
-              odio. Ducimus, officia! Sit ipsum facilis veniam ipsa eaque qui
-              fugit, non rem corrupti debitis et facer
-            </p>
-          </div>
-          <div className="roles">
-            <div className="roles__top">
-              <a href="/" className="roles__link">
-                <img src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="alt" title="title" className="roles__image" />
-                <div>
-                  <h5 className="roles__title">This is the Title</h5>
-                  <p className="roles__role">This is the role</p>
-                </div>
-              </a>
-            </div>
-            <p className="roles__desc">
-              At ut enim quaerat illum ipsum eos eum quia repudiandae tempora
-              maxime dicta error iure quidem omnis temporibus magni delectus illo
-              odit aut, recusandae vero! At ut enim quaerat illum ipsum eos eum
-              orem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos ex
-              officiis id velit officia? Temporibus laudantium nesciunt, quae
-              adipisci ad numquam optio ab asperiores delectus repudiandae nostrum
-              odio. Ducimus, officia! Sit ipsum facilis veniam ipsa eaque qui
-              fugit, non rem corrupti debitis et facer
-            </p>
-          </div>
-          <div className="roles">
-            <div className="roles__top">
-              <a href="/" className="roles__link">
-                <img src="https://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg" alt="alt" title="title" className="roles__image" />
-                <div>
-                  <h5 className="roles__title">This is the Title</h5>
-                  <p className="roles__role">This is the role</p>
-                </div>
-              </a>
-            </div>
-            <p className="roles__desc">
-              At ut enim quaerat illum ipsum eos eum quia repudiandae tempora
-              maxime dicta error iure quidem omnis temporibus magni delectus illo
-              odit aut, recusandae vero! At ut enim quaerat illum ipsum eos eum
-              orem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos ex
-              officiis id velit officia? Temporibus laudantium nesciunt, quae
-              adipisci ad numquam optio ab asperiores delectus repudiandae nostrum
-              odio. Ducimus, officia! Sit ipsum facilis veniam ipsa eaque qui
-              fugit, non rem corrupti debitis et facer
-            </p>
-          </div>
+          ))}
+
         </div>
       </section>
     </Fragment>
