@@ -7,9 +7,9 @@ const Navbar = (props) => {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("Spider Man");
 
-  useEffect(() => {
-    props.history.push(`/search-results/${query}`);
-  }, [query])
+  // useEffect(() => {
+  //   props.history.push(`/search-results/${query)}`);
+  // }, [query])
 
   const updateSearch = e => {
     setSearch(e.target.value);

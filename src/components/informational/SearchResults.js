@@ -9,21 +9,20 @@ const SearchResults = () => {
   const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
   const [results, setResults] = useState([]);
 
-  useEffect(() => {
-    fetchSearch();
-  },[results])
+  // useEffect(() => {
+  //   fetchSearch();
+  // },[])
 
-  const fetchSearch = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`);
-    const data = await response.json();
-    setResults(data.results);
-    console.log(data.results)
-  }
+  // const fetchSearch = async () => {
+  //   const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`);
+  //   const data = await response.json();
+  //   setResults(data.results);
+  // }
 
   return (
     <section className="searchResults">
       <div className="container container--small">
-        <h2 className="searchResults__title">Search results for {query}</h2>
+        <h2 className="searchResults__title">Search results for query</h2>
         <div className="searchResults__wrapper">
           {results.map(movie => (
             <div key={ movie.id } className="searchCard">

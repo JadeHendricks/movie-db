@@ -4,11 +4,11 @@ import CardItem from "./CardItem";
 const Cards = () => {
   const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
 
+  const [nowPlaying, setNowPlaying] = useState([]);
+
   useEffect(() => {
     getLatestMovies();
   }, []);
-
-  const [nowPlaying, setNowPlaying] = useState([]);
 
   const getLatestMovies = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US`);
