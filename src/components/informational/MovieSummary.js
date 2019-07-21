@@ -38,6 +38,7 @@ const MovieSummary = ({ match }) => {
     <Fragment>
       <Header movie={movie}/>
       <ActorSlider cast={cast} />
+      
       <section className="movieDetails">
         <div className="container">
           <div className="informationBlock box">

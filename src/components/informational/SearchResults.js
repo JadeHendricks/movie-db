@@ -22,7 +22,7 @@ const SearchResults = () => {
   return (
     <section className="searchResults">
       <div className="container container--small">
-        <h2 className="searchResults__title">Search results for query</h2>
+        <h2 className="searchResults__title">{`Search results for ${query}`}</h2>
         <div className="searchResults__wrapper">
           {results.map(movie => (
             <div key={ movie.id } className="searchCard">
@@ -37,18 +37,18 @@ const SearchResults = () => {
           ))}
         </div>
         <div className="pagination">
-            <div className="pagination__prev">
-              <button className="button button--white">
-                <svg className="pagination__icon"><use xlinkHref={`${svg}#icon-chevron-thin-left`}></use></svg>
-                Previous
-              </button>
-            </div>
-            <div className="pagination__next">
-              <button className="button button--white">
-                <svg className="pagination__icon"><use xlinkHref={`${svg}#icon-chevron-thin-right`}></use></svg>
-                Next
-              </button>
-            </div>
+          <div className="pagination__prev">
+            <button className="button button--white">
+              <svg className="pagination__icon"><use xlinkHref={`${svg}#icon-chevron-thin-left`}></use></svg>
+              Previous
+            </button>
+          </div>
+          <div className="pagination__next">
+            <button className="button button--white">
+              <svg className="pagination__icon"><use xlinkHref={`${svg}#icon-chevron-thin-right`}></use></svg>
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </section>
