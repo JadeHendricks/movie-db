@@ -32,13 +32,16 @@ const MovieSummary = ({ match }) => {
     const data = await response.json();
     setCast(data.cast.slice(0, 10))
   }
-  
 
+  const trimLength = (paragraph, length) => {
+    return paragraph.slice(0, length);
+  }
+  
   return (
     <Fragment>
       <Header movie={movie}/>
       <ActorSlider cast={cast} />
-      
+
       <section className="movieDetails">
         <div className="container">
           <div className="informationBlock box">
@@ -56,7 +59,7 @@ const MovieSummary = ({ match }) => {
             <div className="informationBlock box">
               <h4 className="informationBlock__title">{ review.author }</h4>
               <p className="informationBlock__desc">
-                { review.content }
+                { trimLength(review.content, 500) }...
               </p>
               <a href={ review.url }>See full review</a>
             </div>
