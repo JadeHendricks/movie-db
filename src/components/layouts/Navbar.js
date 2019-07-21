@@ -5,11 +5,15 @@ import svg from "../../images/sprite.svg";
 const Navbar = (props) => {
 
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("Spider Man");
+  const [query, setQuery] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
-  // useEffect(() => {
-  //   props.history.push(`/search-results/${query)}`);
-  // }, [query])
+  useEffect(() => {
+    if (redirect) {
+      props.history.push(`/search-results/${query}`);
+      setRedirect(false);
+    }
+  }, [query])
 
   const updateSearch = e => {
     setSearch(e.target.value);
@@ -19,6 +23,7 @@ const Navbar = (props) => {
     e.preventDefault();
     setQuery(search);
     setSearch("");
+    setRedirect(true);
   }
 
   return (
