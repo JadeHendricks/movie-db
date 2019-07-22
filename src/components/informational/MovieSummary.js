@@ -8,11 +8,13 @@ const MovieSummary = ({ match }) => {
   const [movie, setMovie] = useState({});
   const [reviews, setReviews] = useState([]);
   const [cast, setCast] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     fetchMovie();
     fetchMovieReviews();
     fetchCast();
+    fetchVideos();
   }, [])
 
   const fetchMovie = async () => {
@@ -33,6 +35,13 @@ const MovieSummary = ({ match }) => {
     setCast(data.cast.slice(0, 10))
   }
 
+  const fetchVideos = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${match.params.id}/videos?api_key=${API_KEY}&language=en-US&page=1`);
+    const data = await response.json();
+    setVideos(data.results);
+    console.log(data.results.name);
+  }
+
   const trimLength = (paragraph, length) => {
     return paragraph.slice(0, length);
   }
@@ -41,6 +50,12 @@ const MovieSummary = ({ match }) => {
     <Fragment>
       <Header movie={movie}/>
       <ActorSlider cast={cast} />
+
+      <div className="trailers">
+        {videos.map(video => (
+          <iframe title="1" width="420" height="315"src={`https://www.youtube.com/embed/${video.key}`}></iframe>
+        ))}
+      </div>
 
       <section className="movieDetails">
         <div className="container">
