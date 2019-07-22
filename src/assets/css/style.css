@@ -745,7 +745,6 @@ label {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #131722 url("../images/ctaBG.jpg") left top/cover no-repeat;
   padding: 10rem 0; }
   .cta__contentHolder {
     width: 40%; }
@@ -882,9 +881,6 @@ label {
   .actorSliderSlide__link {
     text-decoration: none;
     cursor: pointer; }
-
-.slick-slider {
-  overflow: hidden; }
 
 .slick-list {
   margin: 0 -0.5rem; }

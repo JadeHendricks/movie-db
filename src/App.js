@@ -10,7 +10,7 @@ import MovieSummary from "./components/informational/MovieSummary";
 import ActorSummary from "./components/informational/ActorSummary";
 import SearchResults from "./components/informational/SearchResults";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './App.css';
+import './assets/css/style.css';
 
 const App = () => {
   return (
