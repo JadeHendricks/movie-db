@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import notFoundImage from "../../images/no_image_found.png";
 
 const ActorSummary = ({ match }) => {
 
@@ -45,7 +46,10 @@ const ActorSummary = ({ match }) => {
             <div key={ roles.id } className="roles">
               <div className="roles__top">
                 <Link to={`/movie-summary/${roles.id}`} className="roles__link">
-                  <img src={`https://image.tmdb.org/t/p/w185/${roles.backdrop_path}`} alt="alt" title="title" className="roles__image" />
+                  {roles.backdrop_path === null ? 
+                    <img src={notFoundImage} className="roles__image" alt={ roles.title } title={ roles.title }></img>: 
+                    <img src={`https://image.tmdb.org/t/p/w185/${roles.backdrop_path}`} className="roles__image" alt={ roles.title } title={ roles.title } />
+                  }
                   <div>
                     <h5 className="roles__title">{ roles.title}</h5>
                     <p className="roles__role">{ roles.character }</p>

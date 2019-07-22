@@ -41,9 +41,10 @@ const SearchResults = () => {
           {results.map(movie => (
             <div key={ movie.id } className="searchCard">
               <Link to={`/movie-summary/${movie.id}`}>
-                {movie.poster_path === null ? <img src={notFoundImage} className="searchCard__image" alt={ movie.title } title={ movie.title }></img> :
-                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className="searchCard__image" alt={ movie.title } title={ movie.title }></img>}
-                
+                {movie.poster_path === null ? 
+                  <img src={notFoundImage} className="searchCard__image" alt={ movie.title } title={ movie.title }></img> :
+                  <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className="searchCard__image" alt={ movie.title } title={ movie.title }></img>
+                }
                 <div className="searchCard__content">
                   <h5 className="searchCard__title">{ movie.title }</h5>
                   <p className="searchCard__desc">{ movie.vote_average }</p>

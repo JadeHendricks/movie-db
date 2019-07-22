@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import svg from "../../images/sprite.svg";
 import { Link } from "react-router-dom";
+import notFoundImage from "../../images/no_image_found.png";
 
 const ActorSlider = ({ cast }) => {
 
@@ -34,7 +35,9 @@ const ActorSlider = ({ cast }) => {
       {cast.map(actor => (
         <div key={actor.id} className="actorSliderSlide">
           <Link to={`/actor-summary/${actor.id}`} className="actorSliderSlide__link">
-            <img className="actorSliderSlide__image" src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={ actor.name } />
+            {actor.profile_path === null ?  
+              <img src={notFoundImage} className="actorSliderSlide__image" alt={ actor.name } title={ actor.name }></img> : 
+              <img className="actorSliderSlide__image" src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={ actor.name } title={ actor.name } />}
             <span className="actorSliderSlide__name">{ actor.name }</span>
           </Link>
         </div>
