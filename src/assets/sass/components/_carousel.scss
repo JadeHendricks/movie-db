@@ -32,6 +32,7 @@
     background-color: $black;
     border-radius: 0.4rem;
     position: relative;
+    overflow: hidden;
     cursor: pointer;
     &:hover .movieSliderSlide__overlay {
       visibility: visible;

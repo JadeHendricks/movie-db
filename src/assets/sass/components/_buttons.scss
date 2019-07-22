@@ -39,6 +39,13 @@
   }
 }
 
+a.button {
+  height: 4.5rem;
+  display: block;
+  line-height: 4.5rem;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 991px) {
   .button {
     padding: 0 3rem;

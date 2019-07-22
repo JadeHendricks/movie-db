@@ -24,6 +24,10 @@
   }
   &__li {
     margin-right: 2rem;
+    a {
+      color: $grey2;
+      text-decoration: none;
+    }
     &:last-child {
       margin-right: 0;
     }
