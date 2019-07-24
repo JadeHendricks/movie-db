@@ -11,12 +11,14 @@ const Index = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
+  const [nowPlaying, setNowPlaying] = useState([]);
   
   useEffect(() => {
     getMostPopularMovie();
     getPopularMovies();
     getUpcomingMovies();
     getTopRatedMovies();
+    getLatestMovies();
   }, [])
 
   const getMostPopularMovie = async () => {
@@ -43,11 +45,16 @@ const Index = () => {
     setTopRatedMovies(data.results);
   }
   
+  const getLatestMovies = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US`);
+    const data = await response.json();
+    setNowPlaying(data.results.slice(0, 12));
+  }
 
   return (
     <Fragment>
       <Header movie={mostPopularMovie}/>
-      <Cards />
+      <Cards movies={nowPlaying} />
       <CTA />
       <MovieSlider slide={popularMovies} />
       <div className="sliderWrapper">
