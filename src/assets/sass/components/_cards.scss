@@ -46,6 +46,16 @@
     text-decoration: underline;
     cursor: pointer;
     margin-top: 1rem;
+    text-decoration: none;
+    color: $lightBlue;
+    span {
+      position: relative;
+      left: 0;
+      transition: all 0.4s linear;
+    }
+    &:hover > span {
+      left: 0.5rem;
+    }
   }
   &__categories {
     color: currentColor;
@@ -140,6 +150,38 @@
   }
 }
 
+.movieReviews {
+  border-left: 0.5rem solid $grey;
+  padding: 4rem;
+  background-color: $black;
+  color: $white;
+  margin-bottom: 3rem;
+  &__h4 {
+    margin-bottom: 0.5rem;
+  }
+  &__p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  &__link {
+    display: block;
+    color: currentColor;
+    font-size: 1.6rem;
+    text-decoration: none;
+    span {
+      position: relative;
+      left: 0;
+      transition: all 0.4s linear;
+    }
+    &:hover > span {
+      left: 0.5rem;
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .movieCard {
     width: 23.5%;
@@ -229,6 +271,18 @@
     }
     &:nth-child(2n) {
       margin-right: 0;
+    }
+  }
+
+  .movieReviews {
+    border-left: 0.3rem solid $grey;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    &__p {
+      font-size: 1.4rem;
+    }
+    &__link {
+      font-size: 1.4rem;
     }
   }
 }

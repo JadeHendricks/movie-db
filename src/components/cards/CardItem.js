@@ -18,7 +18,7 @@ const CardItem = ({movie: {backdrop_path, title, release_date, vote_average, id}
         <h5 className="movieCard__title">{ title }</h5>
           <span className="rating">{ vote_average }</span>
         <span className="movieCard__categories">{ release_date }</span>
-        <Link to={`/movie-summary/${id}`} className="movieCard__viewmore" href="/">View More &rarr;</Link>
+        <Link to={`/movie-summary/${id}`} className="movieCard__viewmore" href="/">View More <span>&rarr;</span></Link>
       </div>
     </div>
   )

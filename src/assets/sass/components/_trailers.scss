@@ -1,0 +1,11 @@
+.trailers {
+  display: flex;
+  justify-content: flex-start;
+  &__iframe {
+    flex: 0 1 32%;
+    margin-right: 2%;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

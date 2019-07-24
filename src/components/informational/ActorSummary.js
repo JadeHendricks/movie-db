@@ -24,17 +24,16 @@ const ActorSummary = ({ match }) => {
     const response = await fetch(`https://api.themoviedb.org/3/person/${match.params.id}/movie_credits?api_key=${API_KEY}&language=en-US`);
     const data = await response.json();
     setMovieCredits(data.cast.slice(0, 5));
+    console.log(data.cast);
   }
 
   return (
     <Fragment>
       <section className="movieDetails">
         <div className="container">
-          <div className="informationBlock box">
-            <h4 className="informationBlock__title">Biography</h4>
-            <p className="informationBlock__desc">
-              {personData.biography}
-            </p>
+          <div className="heading">
+            <h3 className="heading-title">Biography</h3>
+            <p class="heading__content">{ personData.biography }</p>
           </div>
         </div>
       </section>
@@ -48,7 +47,7 @@ const ActorSummary = ({ match }) => {
                 <Link to={`/movie-summary/${roles.id}`} className="roles__link">
                   {roles.backdrop_path === null ? 
                     <img src={notFoundImage} className="roles__image" alt={ roles.title } title={ roles.title }></img>: 
-                    <img src={`https://image.tmdb.org/t/p/w185/${roles.backdrop_path}`} className="roles__image" alt={ roles.title } title={ roles.title } />
+                    <img src={`https://image.tmdb.org/t/p/w185/${roles.poster_path}`} className="roles__image" alt={ roles.title } title={ roles.title } />
                   }
                   <div>
                     <h5 className="roles__title">{ roles.title}</h5>

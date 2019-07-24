@@ -27,9 +27,6 @@ const ActorSlider = ({ cast }) => {
     <div className="container">
       <div className="heading">
         <h3 className="heading-title">CAST</h3>
-        <p className="heading__content">
-          Iure ab, accusantium corrupti quos aspernatur qui.
-        </p>
       </div>
       <Slider {...settings} className="actorSlider">
       {cast.map(actor => (

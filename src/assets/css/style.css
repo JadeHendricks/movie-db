@@ -24,15 +24,13 @@ body {
 
 .heading {
   color: #ffffff;
-  padding-bottom: 1rem;
-  border-bottom: 0.2rem solid #e5e7e7;
   margin: 4rem 0 2rem 0; }
-  .heading__title {
-    color: currentColor; }
+  .heading-title {
+    color: currentColor;
+    margin-bottom: 2rem; }
   .heading__content {
-    color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 600; }
+    color: currentColor;
+    font-size: 1.8rem; }
 
 .searchResults {
   padding: 3rem 0 3rem 0;
@@ -59,48 +57,40 @@ body {
 .movieDetails {
   margin-top: 5rem; }
 
-.informationBlock {
-  color: #131722; }
-  .informationBlock__title {
-    color: currentColor;
-    margin-bottom: 1rem; }
-  .informationBlock__desc {
-    color: currentColor;
-    font-size: 1.6rem; }
-
 .actorRoles {
   margin: 5rem 0; }
   .actorRoles__title {
     color: #ffffff; }
 
 .roles {
-  background-color: #ffffff;
+  background-color: #131722;
   border-radius: 0.4rem;
-  padding: 1.5rem;
+  padding: 4rem 2.5rem;
   margin-bottom: 4rem;
-  color: #131722; }
+  color: #ffffff;
+  border-right: 0.5rem solid #ffffff;
+  border-left: 0; }
   .roles__link {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 15px;
-    text-decoration: none; }
+    text-decoration: none;
+    color: currentColor; }
   .roles__image {
     height: 10rem;
+    width: 10rem;
+    object-fit: cover;
     border-radius: 0.4rem;
     margin-right: 15px; }
   .roles__title {
-    color: #131722; }
+    color: currentColor; }
   .roles__role {
-    color: #131722; }
+    color: currentColor; }
   .roles__desc {
     font-size: 1.6rem; }
   .roles:nth-child(2n) {
-    background-color: #131722;
-    color: #ffffff; }
-  .roles:nth-child(2n) .roles__title,
-  .roles:nth-child(2n) .roles__role {
-    background-color: #131722;
-    color: #ffffff; }
+    border-left: 0.5rem solid #ffffff;
+    border-right: 0; }
 
 @media screen and (max-width: 991px) {
   .searchResults__title {
@@ -123,11 +113,8 @@ body {
     padding: 2rem 2rem; }
   .movieDetails {
     margin-top: 2rem; }
-  .informationBlock__desc {
-    font-size: 1.4rem; }
   .roles {
-    margin-bottom: 2.5rem;
-    color: #131722; }
+    margin-bottom: 2.5rem; }
     .roles__desc {
       font-size: 1.4rem; } }
 
@@ -583,7 +570,15 @@ a.button {
     float: right;
     text-decoration: underline;
     cursor: pointer;
-    margin-top: 1rem; }
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #0aaee4; }
+    .movieCard__viewmore span {
+      position: relative;
+      left: 0;
+      transition: all 0.4s linear; }
+    .movieCard__viewmore:hover > span {
+      left: 0.5rem; }
   .movieCard__categories {
     color: currentColor;
     font-size: 1.2rem;
@@ -670,6 +665,31 @@ a.button {
   .searchCard:nth-child(5n) {
     margin-right: 0; }
 
+.movieReviews {
+  border-left: 0.5rem solid #d6d8d8;
+  padding: 4rem;
+  background-color: #131722;
+  color: #ffffff;
+  margin-bottom: 3rem; }
+  .movieReviews__h4 {
+    margin-bottom: 0.5rem; }
+  .movieReviews__p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem; }
+  .movieReviews__link {
+    display: block;
+    color: currentColor;
+    font-size: 1.6rem;
+    text-decoration: none; }
+    .movieReviews__link span {
+      position: relative;
+      left: 0;
+      transition: all 0.4s linear; }
+    .movieReviews__link:hover > span {
+      left: 0.5rem; }
+  .movieReviews:last-child {
+    margin-bottom: 0; }
+
 @media screen and (max-width: 1200px) {
   .movieCard {
     width: 23.5%; }
@@ -732,7 +752,15 @@ a.button {
     .searchCard:nth-child(4n) {
       margin-right: 4%; }
     .searchCard:nth-child(2n) {
-      margin-right: 0; } }
+      margin-right: 0; }
+  .movieReviews {
+    border-left: 0.3rem solid #d6d8d8;
+    padding: 3rem;
+    margin-bottom: 2rem; }
+    .movieReviews__p {
+      font-size: 1.4rem; }
+    .movieReviews__link {
+      font-size: 1.4rem; } }
 
 @media screen and (max-width: 520px) {
   .movieCards {
@@ -948,6 +976,15 @@ a.button {
   .pagination__icon {
     width: 1.2rem;
     height: 1.2rem; } }
+
+.trailers {
+  display: flex;
+  justify-content: flex-start; }
+  .trailers__iframe {
+    flex: 0 1 32%;
+    margin-right: 2%; }
+    .trailers__iframe:last-child {
+      margin-right: 0; }
 
 .header {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) center center/cover no-repeat, url("https://cdn.wallpapersafari.com/4/44/YfT0Oo.jpg") top center/cover no-repeat; }
