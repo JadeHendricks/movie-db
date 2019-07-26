@@ -24,7 +24,7 @@ const MovieSummary = ({ match }) => {
     setTimeout(() => {
       setLoading(false);
     }, 500); 
-    
+  
   }, [])
 
   const fetchMovie = async () => {
@@ -69,17 +69,21 @@ const MovieSummary = ({ match }) => {
       <Fragment>
         <Header movie={movie} />
         <ActorSlider cast={cast} />
-        <div class="container">
-          <div className="heading">
-            <h3 className="heading-title">Trailers</h3>
-          </div>
-          <div className="trailers">
-            {videos.map(video => (
-              <iframe class="trailers__iframe" key={video.id} title={video.id} frameBorder="0" width="100%" height="230"src={`https://www.youtube.com/embed/${video.key}`}></iframe>
-            ))}
-          </div>
-        </div>
-  
+
+        { videos.length > 0 ?
+          <div class="container">
+            <div className="heading">
+              <h3 className="heading-title">Trailers</h3>
+            </div>
+            <div className="trailers">
+              {videos.map(video => (
+                <iframe class="trailers__iframe" key={video.id} title={video.id} frameBorder="0" width="100%" height="230"src={`https://www.youtube.com/embed/${video.key}`}></iframe>
+              ))}
+            </div>
+          </div> : null
+         }
+
+        { movie ? 
         <section className="movieDetails">
           <div className="container">
             <div className="heading">
@@ -87,9 +91,12 @@ const MovieSummary = ({ match }) => {
               <p class="heading__content">{ movie.overview }</p>
             </div>
           </div>
-        </section>
-  
-        <div className="container">
+        </section> : null
+        }
+        
+        {
+          reviews.length > 0 ?
+          <div className="container">
           <div className="heading">
             <h3 className="heading-title">Reviews</h3>
           </div>
@@ -99,8 +106,10 @@ const MovieSummary = ({ match }) => {
               <p class="movieReviews__p">{ trimLength(review.content, 500) }...</p>
               <a class="movieReviews__link" href={ review.url }>See full review <span>&rarr;</span></a>
             </section>
-          ))}
-        </div>
+          ))} 
+        </div> :null
+        }
+
         <Cards movies={similarMovies} />
   
       </Fragment>

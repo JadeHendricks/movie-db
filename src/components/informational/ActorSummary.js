@@ -18,7 +18,9 @@ const ActorSummary = ({ match }) => {
     setTimeout(() => {
       setLoading(false);
     }, 500);  
- 
+    
+    console.log(movieCredits);
+
   }, []);
 
   const fetchPerson = async () => {
@@ -38,40 +40,46 @@ const ActorSummary = ({ match }) => {
   } else {
     return (
       <Fragment>
-        <section className="movieDetails">
-          <div className="container">
-            <div className="heading">
-              <h3 className="heading-title">Biography</h3>
-              <p class="heading__content">{ personData.biography }</p>
-            </div>
-          </div>
-        </section>
-  
-        <section className="actorRoles">
-          <div className="container">
-            <h3 className="actorRoles__title marginBottom30">Popular Roles</h3>
-            {movieCredits.map(roles => (
-              <div key={ roles.id } className="roles">
-                <div className="roles__top">
-                  <Link to={`/movie-summary/${roles.id}`} className="roles__link">
-                    {roles.backdrop_path === null ? 
-                      <img src={notFoundImage} className="roles__image" alt={ roles.title } title={ roles.title }></img>: 
-                      <img src={`https://image.tmdb.org/t/p/w185/${roles.poster_path}`} className="roles__image" alt={ roles.title } title={ roles.title } />
-                    }
-                    <div>
-                      <h5 className="roles__title">{ roles.title}</h5>
-                      <p className="roles__role">{ roles.character }</p>
-                      <p>{roles.release_date}</p>
-                    </div>
-                  </Link>
+
+        { personData ? 
+          <section className="movieDetails">
+              <div className="container">
+                <div className="heading">
+                  <h3 className="heading-title">Biography</h3>
+                  <p className="heading__content">{ personData.biography }</p>
                 </div>
-                <p className="roles__desc">
-                  { roles.overview }
-                </p>
               </div>
-            ))}
-          </div>
-        </section>
+          </section> : null
+        }
+
+        { movieCredits.length > 0 ? 
+          <section className="actorRoles">
+            <div className="container">
+              <h3 className="actorRoles__title marginBottom30">Popular Roles</h3>
+              {movieCredits.map(roles => (
+                <div key={ roles.id } className="roles">
+                  <div className="roles__top">
+                    <Link to={`/movie-summary/${roles.id}`} className="roles__link">
+                      {roles.backdrop_path === null ? 
+                        <img src={notFoundImage} className="roles__image" alt={ roles.title } title={ roles.title }></img>: 
+                        <img src={`https://image.tmdb.org/t/p/w185/${roles.poster_path}`} className="roles__image" alt={ roles.title } title={ roles.title } />
+                      }
+                      <div>
+                        <h5 className="roles__title">{ roles.title}</h5>
+                        <p className="roles__role">{ roles.character }</p>
+                        <p>{roles.release_date}</p>
+                      </div>
+                    </Link>
+                  </div>
+                  <p className="roles__desc">
+                    { roles.overview }
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section> : null
+        }
+
       </Fragment>
     )
   }
