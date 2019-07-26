@@ -3,10 +3,12 @@ import Header from "./Header";
 import Cards from "../cards/Cards";
 import CTA from "../layouts/CTA";
 import MovieSlider from "../slider/MovieSlider";
+import Loader from "../layouts/Loader";
 
 const Index = () => {
   const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
   
+  const [loading, setLoading] = useState(true);
   const [mostPopularMovie, setMostPopularMovie] = useState({});
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -19,6 +21,11 @@ const Index = () => {
     getUpcomingMovies();
     getTopRatedMovies();
     getLatestMovies();
+    
+    setTimeout(() => {
+      setLoading(false);
+    }, 500); 
+
   }, [])
 
   const getMostPopularMovie = async () => {
@@ -51,18 +58,22 @@ const Index = () => {
     setNowPlaying(data.results.slice(0, 12));
   }
 
-  return (
-    <Fragment>
-      <Header movie={mostPopularMovie}/>
-      <Cards movies={nowPlaying} />
-      <CTA />
-      <MovieSlider slide={popularMovies} />
-      <div className="sliderWrapper">
-        <MovieSlider slide={upcomingMovies} />
-      </div>
-      <MovieSlider slide={topRatedMovies} />
-    </Fragment>
-  )
+  if (loading) {
+    return <Loader />
+  } else {
+    return (
+      <Fragment>
+        <Header movie={mostPopularMovie}/>
+        <Cards movies={nowPlaying} />
+        <CTA />
+        <MovieSlider slide={popularMovies} />
+        <div className="sliderWrapper">
+          <MovieSlider slide={upcomingMovies} />
+        </div>
+        <MovieSlider slide={topRatedMovies} />
+      </Fragment>
+    )
+  }
 }
 
 export default Index;

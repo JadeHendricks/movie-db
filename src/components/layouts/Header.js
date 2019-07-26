@@ -21,6 +21,7 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
     if(!id) return;
     const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US&page=1`);
     const data = await response.json();
+    if(!data.results[0]) return;
     setVideo(data.results[0].key);
   }
 
