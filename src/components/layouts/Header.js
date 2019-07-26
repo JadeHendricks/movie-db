@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
-const Header = ({ movie: { backdrop_path, title, overview, release_date, original_language, vote_average, revenue, id } }) => {
+const Header = ({ movie: { backdrop_path, title, overview, release_date, original_language, vote_average, id } }) => {
 
   const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
   const [video, setVideo] = useState("");
@@ -36,7 +36,7 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
           <h1 className="headerMainMovie__title uppercase">{ title }</h1>
           <p className="marginBottom20">{ overview }</p>
           <ul className="headerMainMovie__ul">
-            <li className="headerMainMovie__li">{ release_date } { revenue }</li>
+            <li className="headerMainMovie__li">{ release_date }</li>
             <li className="headerMainMovie__li">|</li>
             <li className="headerMainMovie__li">{ original_language }</li>
             <li className="headerMainMovie__li">
