@@ -21,7 +21,7 @@ const Index = () => {
     getUpcomingMovies();
     getTopRatedMovies();
     getLatestMovies();
-    
+
     setTimeout(() => {
       setLoading(false);
     }, 500); 
@@ -64,13 +64,36 @@ const Index = () => {
     return (
       <Fragment>
         <Header movie={mostPopularMovie}/>
-        <Cards movies={nowPlaying} />
-        <CTA />
-        <MovieSlider slide={popularMovies} />
-        <div className="sliderWrapper">
-          <MovieSlider slide={upcomingMovies} />
+        <div className="container">
+          <div className="heading">
+            <h4 className="heading__title">Now Playing</h4>
+          </div>
+          <Cards movies={nowPlaying} />
         </div>
-        <MovieSlider slide={topRatedMovies} />
+        <CTA />
+
+        <div class="container">
+          <div className="heading">
+            <h4 className="heading__title">Popular Movies</h4>
+          </div>
+          <MovieSlider slide={popularMovies} />
+        </div>
+
+        <div className="sliderWrapper">
+          <div class="container">
+            <div className="heading">
+              <h4 className="heading__title">Upcoming Movies</h4>
+            </div>
+            <MovieSlider slide={upcomingMovies} />
+          </div>
+        </div>
+        
+        <div class="container">
+          <div className="heading">
+            <h4 className="heading__title">Top Rate Movies</h4>
+          </div>
+          <MovieSlider slide={topRatedMovies} />
+        </div>
       </Fragment>
     )
   }

@@ -26,7 +26,7 @@ const ActorSlider = ({ cast }) => {
   return (
     <div className="container">
       <div className="heading">
-        <h3 className="heading-title">CAST</h3>
+        <h4 className="heading__title">Cast</h4>
       </div>
       <Slider {...settings} className="actorSlider">
       {cast.map(actor => (

@@ -27,26 +27,20 @@ const MovieSlider = ({ slide }) => {
   }
 
   return (
-    <div className="container">
-      <div className="heading">
-        <h3 className="heading__title">Lorem ipsum dolor sit.</h3>
-        <p className="heading__content">Iure ab, accusantium corrupti quos aspernatur qui.</p>
-      </div>
-        <Slider {...settings} className="movieSlider">
-        {slide.map(movie => (
-          <div key={movie.id} className="movieSliderSlide">
-            <div className="movieSliderSlide__image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`, backgroundRepeat: "no-repeat", backgroundPosition: "center center", backgroundSize: "cover"}}>
-                <div className="movieSliderSlide__overlay">
-                    <h5 className="movieSliderSlide__title">{ movie.title }</h5>
-                    <p className="movieSliderSlide__desc">{ trimLength(movie.overview, 250) }...</p>
-                    <Link to={`/movie-summary/${movie.id}`} className="movieSliderSlide__link" href="/">View More &rarr;</Link>
-                    <span className="rating">{ movie.vote_average }</span>
-                </div>
-            </div>
+      <Slider {...settings} className="movieSlider">
+      {slide.map(movie => (
+        <div key={movie.id} className="movieSliderSlide">
+          <div className="movieSliderSlide__image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`, backgroundRepeat: "no-repeat", backgroundPosition: "center center", backgroundSize: "cover"}}>
+              <div className="movieSliderSlide__overlay">
+                  <h5 className="movieSliderSlide__title">{ movie.title }</h5>
+                  <p className="movieSliderSlide__desc">{ trimLength(movie.overview, 250) }...</p>
+                  <Link to={`/movie-summary/${movie.id}`} className="movieSliderSlide__link" href="/">View More &rarr;</Link>
+                  <span className="rating">{ movie.vote_average }</span>
+              </div>
           </div>
-        ))}
-      </Slider>
-    </div>
+        </div>
+      ))}
+    </Slider>
   )
 }
 

@@ -45,7 +45,7 @@ const ActorSummary = ({ match }) => {
           <section className="movieDetails">
               <div className="container">
                 <div className="heading">
-                  <h3 className="heading-title">Biography</h3>
+                  <h4 className="heading__title">Biography</h4>
                   <p className="heading__content">{ personData.biography }</p>
                 </div>
               </div>

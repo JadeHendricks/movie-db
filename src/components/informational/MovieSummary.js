@@ -73,7 +73,7 @@ const MovieSummary = ({ match }) => {
         { videos.length > 0 ?
           <div class="container">
             <div className="heading">
-              <h3 className="heading-title">Trailers</h3>
+              <h4 className="heading__title">Trailers</h4>
             </div>
             <div className="trailers">
               {videos.map(video => (
@@ -87,7 +87,7 @@ const MovieSummary = ({ match }) => {
         <section className="movieDetails">
           <div className="container">
             <div className="heading">
-              <h3 className="heading-title marginBottom10">Summary</h3>
+              <h4 className="heading__title marginBottom10">Summary</h4>
               <p class="heading__content">{ movie.overview }</p>
             </div>
           </div>
@@ -98,7 +98,7 @@ const MovieSummary = ({ match }) => {
           reviews.length > 0 ?
           <div className="container">
           <div className="heading">
-            <h3 className="heading-title">Reviews</h3>
+            <h4 className="heading__title">Reviews</h4>
           </div>
           {reviews.map(review => (
             <section key={review.id} className="movieReviews">
@@ -110,7 +110,12 @@ const MovieSummary = ({ match }) => {
         </div> :null
         }
 
-        <Cards movies={similarMovies} />
+        <div className="container">
+          <div className="heading">
+            <h4 className="heading__title">Similar Movies</h4>
+          </div>
+          <Cards movies={similarMovies} />
+        </div>
   
       </Fragment>
     )
