@@ -72,7 +72,7 @@ const Index = () => {
         </div>
         <CTA />
 
-        <div class="container">
+        <div className="container">
           <div className="heading">
             <h4 className="heading__title">Popular Movies</h4>
           </div>
@@ -80,7 +80,7 @@ const Index = () => {
         </div>
 
         <div className="sliderWrapper">
-          <div class="container">
+          <div className="container">
             <div className="heading">
               <h4 className="heading__title">Upcoming Movies</h4>
             </div>
@@ -88,7 +88,7 @@ const Index = () => {
           </div>
         </div>
         
-        <div class="container">
+        <div className="container">
           <div className="heading">
             <h4 className="heading__title">Top Rate Movies</h4>
           </div>

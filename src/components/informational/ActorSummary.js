@@ -18,8 +18,6 @@ const ActorSummary = ({ match }) => {
     setTimeout(() => {
       setLoading(false);
     }, 500);  
-    
-    console.log(movieCredits);
 
   }, []);
 

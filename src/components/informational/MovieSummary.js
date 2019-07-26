@@ -3,6 +3,8 @@ import Header from "../layouts/Header";
 import ActorSlider from "../slider/ActorSlider";
 import Cards from "../cards/Cards";
 import Loader from "../layouts/Loader";
+import { Link } from "react-router-dom";
+
 
 const MovieSummary = ({ match }) => {
   const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
@@ -23,9 +25,10 @@ const MovieSummary = ({ match }) => {
 
     setTimeout(() => {
       setLoading(false);
+      window.scrollTo(0, 0);
     }, 500); 
   
-  }, [])
+  }, [match.params.id])
 
   const fetchMovie = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${API_KEY}&language=en-US&page=1`);
@@ -71,7 +74,7 @@ const MovieSummary = ({ match }) => {
         <ActorSlider cast={cast} />
 
         { videos.length > 0 ?
-          <div class="container">
+          <div className="container">
             <div className="heading">
               <h4 className="heading__title">Trailers</h4>
             </div>
@@ -88,7 +91,7 @@ const MovieSummary = ({ match }) => {
           <div className="container">
             <div className="heading">
               <h4 className="heading__title marginBottom10">Summary</h4>
-              <p class="heading__content">{ movie.overview }</p>
+              <p className="heading__content">{ movie.overview }</p>
             </div>
           </div>
         </section> : null
@@ -102,9 +105,9 @@ const MovieSummary = ({ match }) => {
           </div>
           {reviews.map(review => (
             <section key={review.id} className="movieReviews">
-              <h4 class="movieReviews__h4">{ review.author }</h4>
-              <p class="movieReviews__p">{ trimLength(review.content, 500) }...</p>
-              <a class="movieReviews__link" href={ review.url }>See full review <span>&rarr;</span></a>
+              <h4 className="movieReviews__h4">{ review.author }</h4>
+              <p className="movieReviews__p">{ trimLength(review.content, 500) }...</p>
+              <Link className="movieReviews__link" href={ review.url }>See full review <span>&rarr;</span></Link>
             </section>
           ))} 
         </div> :null
