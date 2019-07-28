@@ -1,19 +1,19 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import notFoundImage from "../../images/no_image_found.png";
 import Loader from "../layouts/Loader";
 
+import PeopleContext from "../../context/people/peopleContext";
+
 const ActorSummary = ({ match }) => {
 
-  const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
-
+  const peopleContext = useContext(PeopleContext);
+  const { fetchPerson, fetchMovieCredits, personData, movieCredits } = peopleContext;
   const [loading, setLoading] = useState(true);
-  const [personData, setPersonData] = useState({});
-  const [movieCredits, setMovieCredits] = useState([]);
 
   useEffect(() => {
-    fetchPerson();
-    fetchMovieCredits();
+    fetchPerson(match.params.id);
+    fetchMovieCredits(match.params.id);
 
     setTimeout(() => {
       setLoading(false);
@@ -21,17 +21,7 @@ const ActorSummary = ({ match }) => {
 
   }, []);
 
-  const fetchPerson = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/person/${match.params.id}?api_key=${API_KEY}&language=en-US`);
-    const data = await response.json();
-    setPersonData(data);
-  }
 
-  const fetchMovieCredits = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/person/${match.params.id}/movie_credits?api_key=${API_KEY}&language=en-US`);
-    const data = await response.json();
-    setMovieCredits(data.cast.slice(0, 5));
-  }
 
   if (loading) {
     return <Loader />

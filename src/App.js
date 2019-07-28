@@ -12,24 +12,28 @@ import SearchResults from "./components/informational/SearchResults";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './assets/css/style.css';
 
+import PeopleState from './context/people/PeopleState';
+
 const App = () => {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/movie-summary/:id" component={MovieSummary} />
-          <Route path="/actor-summary/:id" component={ActorSummary} />
-          <Route path="/search-results" component={SearchResults} />
-          <Route path="/" exact component={Index} />
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+    <PeopleState>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/movie-summary/:id" component={MovieSummary} />
+            <Route path="/actor-summary/:id" component={ActorSummary} />
+            <Route path="/search-results" component={SearchResults} />
+            <Route path="/" exact component={Index} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    </PeopleState>
   );
 }
 
