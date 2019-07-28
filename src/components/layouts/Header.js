@@ -51,7 +51,7 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
               </li>
             }
             <li className="headerMainMovie__li">
-              <Link className="button button--white" target="_blank" onClick={watchVideo} to={""}>Watch now</Link>
+              <Link className="button button--white" target="_blank" onClick={watchVideo} to={""}>Watch Trailer</Link>
             </li>
           </ul>
         </div>
