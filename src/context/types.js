@@ -1,2 +1,10 @@
+//ActorSummary
 export const FETCH_PERSON = "FETCH_PERSON";
 export const FETCH_MOVIE_CREDITS = "FETCH_MOVIE_CREDITS";
+
+//MovieSummary
+export const FETCH_MOVIE = "FETCH_MOVIE";
+export const FETCH_MOVIE_REVIEWS = "FETCH_MOVIE_REVIEWS";
+export const FETCH_CAST = "FETCH_CAST";
+export const FETCH_VIDEOS = "FETCH_VIDEOS";
+export const FETCH_SIMILAR_MOVIES = "FETCH_SIMILAR_MOVIES";
