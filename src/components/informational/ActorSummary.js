@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import notFoundImage from "../../images/no_image_found.png";
 import Loader from "../layouts/Loader";
 
-import PeopleContext from "../../context/people/peopleContext";
+import PeoplesummaryContext from "../../context/peoplesummary/peoplesummaryContext";
 
 const ActorSummary = ({ match }) => {
 
-  const peopleContext = useContext(PeopleContext);
-  const { fetchPerson, fetchMovieCredits, personData, movieCredits } = peopleContext;
+  const peoplesummaryContext = useContext(PeoplesummaryContext);
+  const { fetchPerson, fetchMovieCredits, personData, movieCredits } = peoplesummaryContext;
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

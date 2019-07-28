@@ -12,11 +12,11 @@ import SearchResults from "./components/informational/SearchResults";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './assets/css/style.css';
 
-import PeopleState from './context/people/PeopleState';
+import PeoplesummaryState from './context/peoplesummary/PeoplesummaryState';
 
 const App = () => {
   return (
-    <PeopleState>
+    <PeoplesummaryState>
       <Router>
         <div className="App">
           <Navbar />
@@ -33,7 +33,7 @@ const App = () => {
           <Footer />
         </div>
       </Router>
-    </PeopleState>
+    </PeoplesummaryState>
   );
 }
 
