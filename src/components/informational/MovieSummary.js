@@ -58,7 +58,7 @@ const MovieSummary = ({ match }) => {
             </div>
             <div className="trailers">
               {videos.map(video => (
-                <iframe class="trailers__iframe" key={video.id} title={video.id} frameBorder="0" width="100%" height="230"src={`https://www.youtube.com/embed/${video.key}`}></iframe>
+                <iframe className="trailers__iframe" key={video.id} title={video.id} frameBorder="0" width="100%" height="230"src={`https://www.youtube.com/embed/${video.key}`}></iframe>
               ))}
             </div>
           </div> : null
@@ -85,7 +85,7 @@ const MovieSummary = ({ match }) => {
             <section key={review.id} className="movieReviews">
               <h4 className="movieReviews__h4">{ review.author }</h4>
               <p className="movieReviews__p">{ trimLength(review.content, 500) }...</p>
-              <Link className="movieReviews__link" href={ review.url }>See full review <span>&rarr;</span></Link>
+              <Link className="movieReviews__link" href={ review.url } to={""}>See full review <span>&rarr;</span></Link>
             </section>
           ))} 
         </div> :null
