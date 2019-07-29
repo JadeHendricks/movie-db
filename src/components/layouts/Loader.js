@@ -9,6 +9,7 @@ const Loader = () => {
       loaderContainer.current.style.transition = "opacity 5s";
       loaderContainer.current.style.opacity = "0";
     }, 100);
+    // eslint-disable-next-line
   }, [loaderContainer]);
 
   return(

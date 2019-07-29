@@ -34,7 +34,7 @@ const Index = () => {
     setTimeout(() => {
       setLoading(false);
     }, 500); 
-
+  // eslint-disable-next-line
   }, [])
 
   if (loading) {

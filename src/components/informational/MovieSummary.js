@@ -35,7 +35,7 @@ const MovieSummary = ({ match }) => {
       setLoading(false);
       window.scrollTo(0, 0);
     }, 500); 
-  
+  // eslint-disable-next-line
   }, [match.params.id])
 
   const trimLength = (paragraph, length) => {

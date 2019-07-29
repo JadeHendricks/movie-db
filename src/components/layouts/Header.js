@@ -15,6 +15,7 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
 
   useEffect(() => {
     fetchTrailer(id);
+    // eslint-disable-next-line
   }, [id]);
 
   const fetchTrailer = async (id) => {

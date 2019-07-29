@@ -21,7 +21,7 @@ const SearchResults = () => {
     setTimeout(() => {
       setLoading(false);
     }, 500); 
-
+  // eslint-disable-next-line
   }, [query])
 
   const fetchSearch = async () => {

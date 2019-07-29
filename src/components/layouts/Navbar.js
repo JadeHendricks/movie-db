@@ -13,6 +13,7 @@ const Navbar = (props) => {
       props.history.push(`/search-results/${query}`);
       setRedirect(false);
     }
+    // eslint-disable-next-line
   }, [query])
 
   const updateSearch = e => {

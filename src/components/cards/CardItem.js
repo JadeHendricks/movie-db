@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const CardItem = ({movie: {backdrop_path, title, release_date, vote_average, id}}) => {
-
-
+  
   const cardBackgroundImg = {
     backgroundImage: `url(https://image.tmdb.org/t/p/w342${backdrop_path})`,
     backgroundRepeat: "no-repeat",

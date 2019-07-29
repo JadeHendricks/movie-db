@@ -8,7 +8,6 @@ import PeoplesummaryContext from "../../context/peoplesummary/peoplesummaryConte
 const ActorSummary = ({ match }) => {
 
   const [loading, setLoading] = useState(true);
-
   const peoplesummaryContext = useContext(PeoplesummaryContext);
   
   const { 
@@ -24,7 +23,7 @@ const ActorSummary = ({ match }) => {
     setTimeout(() => {
       setLoading(false);
     }, 500);  
-
+  // eslint-disable-next-line
   }, []);
 
 
