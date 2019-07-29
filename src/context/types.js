@@ -5,6 +5,9 @@ export const GET_UPCOMING_MOVIES = "FETCH_CAST";
 export const GET_TOP_RATED_MOVIES = "FETCH_VIDEOS";
 export const GET_LATEST_MOVIES = "FETCH_SIMILAR_MOVIES";
 
+//Header
+export const FETCH_TRAILER = "FETCH_TRAILER";
+
 //ActorSummary
 export const FETCH_PERSON = "FETCH_PERSON";
 export const FETCH_MOVIE_CREDITS = "FETCH_MOVIE_CREDITS";

@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
+import HeaderContext from "../../context/header/headerContext";
 
 const Header = ({ movie: { backdrop_path, title, overview, release_date, original_language, vote_average, id } }) => {
 
-  const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
-  const [video, setVideo] = useState("");
+  const headerContext = useContext(HeaderContext);
+
+  const { 
+    video, 
+    fetchTrailer} = headerContext;
 
   const headerBackgroundImage = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original${backdrop_path})`,
@@ -17,14 +21,6 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
     fetchTrailer(id);
     // eslint-disable-next-line
   }, [id]);
-
-  const fetchTrailer = async (id) => {
-    if(!id) return;
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US&page=1`);
-    const data = await response.json();
-    if(!data.results[0]) return;
-    setVideo(data.results[0].key);
-  }
 
   const watchVideo = (e) => {
     e.target.setAttribute("href", `https://www.youtube.com/watch?v=${video}`);
