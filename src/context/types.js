@@ -8,6 +8,11 @@ export const GET_LATEST_MOVIES = "FETCH_SIMILAR_MOVIES";
 //Header
 export const FETCH_TRAILER = "FETCH_TRAILER";
 
+//Search
+export const FETCH_RESULTS = "FETCH_RESULTS";
+export const FETCH_TOTAL_RESULTS = "FETCH_TOTAL_RESULTS";
+export const NEXT_PAGE = "NEXT_PAGE";
+
 //ActorSummary
 export const FETCH_PERSON = "FETCH_PERSON";
 export const FETCH_MOVIE_CREDITS = "FETCH_MOVIE_CREDITS";
