@@ -12,7 +12,17 @@ const MovieSummary = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const moviesummaryContext = useContext(MoviesummaryContext);
 
-  const { fetchMovie, fetchMovieReviews, fetchCast, fetchVideos, fetchSimilarMovies, videos, movie, cast, reviews, similarMovies } = moviesummaryContext;
+  const { 
+    fetchMovie, 
+    fetchMovieReviews, 
+    fetchCast, 
+    fetchVideos, 
+    fetchSimilarMovies, 
+    videos, 
+    movie, 
+    cast, 
+    reviews, 
+    similarMovies } = moviesummaryContext;
 
   useEffect(() => {
     fetchMovie(match.params.id);

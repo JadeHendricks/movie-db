@@ -12,31 +12,34 @@ import SearchResults from "./components/informational/SearchResults";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './assets/css/style.css';
 
+import IndexState from './context/index/IndexState';
 import PeoplesummaryState from './context/peoplesummary/PeoplesummaryState';
 import MoviesummaryState from './context/moviesummary/MoviesummaryState';
 
 const App = () => {
   return (
-    <MoviesummaryState>
-      <PeoplesummaryState>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Switch>
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              <Route path="/profile" component={Profile} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/movie-summary/:id" component={MovieSummary} />
-              <Route path="/actor-summary/:id" component={ActorSummary} />
-              <Route path="/search-results" component={SearchResults} />
-              <Route path="/" exact component={Index} />
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
-      </PeoplesummaryState>
-    </MoviesummaryState>
+    <IndexState>
+      <MoviesummaryState>
+        <PeoplesummaryState>
+          <Router>
+            <div className="App">
+              <Navbar />
+              <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <Route path="/profile" component={Profile} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/movie-summary/:id" component={MovieSummary} />
+                <Route path="/actor-summary/:id" component={ActorSummary} />
+                <Route path="/search-results" component={SearchResults} />
+                <Route path="/" exact component={Index} />
+              </Switch>
+              <Footer />
+            </div>
+          </Router>
+        </PeoplesummaryState>
+      </MoviesummaryState>
+    </IndexState>
   );
 }
 

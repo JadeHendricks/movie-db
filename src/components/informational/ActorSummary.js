@@ -7,9 +7,15 @@ import PeoplesummaryContext from "../../context/peoplesummary/peoplesummaryConte
 
 const ActorSummary = ({ match }) => {
 
-  const peoplesummaryContext = useContext(PeoplesummaryContext);
-  const { fetchPerson, fetchMovieCredits, personData, movieCredits } = peoplesummaryContext;
   const [loading, setLoading] = useState(true);
+
+  const peoplesummaryContext = useContext(PeoplesummaryContext);
+  
+  const { 
+    fetchPerson, 
+    fetchMovieCredits, 
+    personData, 
+    movieCredits } = peoplesummaryContext;
 
   useEffect(() => {
     fetchPerson(match.params.id);
