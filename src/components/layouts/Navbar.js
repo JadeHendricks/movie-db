@@ -8,6 +8,19 @@ const Navbar = (props) => {
   const [query, setQuery] = useState("");
   const [redirect, setRedirect] = useState(false);
 
+//   $(".navMobile__burgericon").on("click", function() {
+//     $(".nav__container").slideToggle(200);
+//   });
+
+//   $(window).on("resize", function() {
+//     if ($(window).width() > 767) {
+//       $(".nav__container").css("display", "flex");
+//     }
+//   });
+// })();
+  const navContainer = React.createRef();
+
+
   useEffect(() => {
     if (redirect) {
       props.history.push(`/search-results/${query}`);
@@ -27,6 +40,10 @@ const Navbar = (props) => {
     setRedirect(true);
   }
 
+  const openNav = () => {
+    navContainer.current.classList.toggle("navToggle");
+  }
+
   return (
     <Fragment>
       <div className="navSpacer"></div>
@@ -34,11 +51,11 @@ const Navbar = (props) => {
         <div className="container">
           <div className="navMobile">
               <Link className="nav__logo" to="/">MovieDB</Link>
-              <svg className="navMobile__burgericon">
+              <svg className="navMobile__burgericon" onClick={openNav}>
                 <use xlinkHref={`${svg}#icon-menu`}></use>
               </svg>
           </div>
-          <div className="nav__container">
+          <div className="nav__container" ref={navContainer}>
             <Link className="nav__logo onlyDesktop" to="/">MovieDB</Link>
             <form className="nav__searchContainer" onSubmit={getSearch}>
                 <svg className="nav__searchIcon">
@@ -47,16 +64,12 @@ const Navbar = (props) => {
                 <input className="nav__search input" type="search" name="search" placeholder="Search..." value={search} onChange={updateSearch}/>
             </form>
             <ul className="nav__ul">
-              <Link to="/login">
                 <li className="nav__li">
-                    <button className="button button--skeleton" type="button">Log in</button>
+                    <Link className="button button--skeleton" to="/login" type="button">Log in</Link>
                 </li>
-              </Link>
-              <Link to="/register">
                 <li className="nav__li">
-                  <button className="button button--lightBlue" type="button">Sign up</button>
+                  <Link className="button button--lightBlue" to="/register" type="button">Sign up</Link>
                 </li>
-              </Link>
             </ul>
           </div>
         </div>

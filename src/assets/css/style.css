@@ -1232,6 +1232,10 @@ a.button {
       .navMobile__burgericon:hover {
         cursor: pointer; } }
 
+.navToggle {
+  display: flex;
+  transition: all .8s; }
+
 .footer {
   background-color: #131722;
   padding: 4rem 0 3rem 0;
