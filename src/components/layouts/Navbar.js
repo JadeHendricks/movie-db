@@ -7,17 +7,6 @@ const Navbar = (props) => {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
   const [redirect, setRedirect] = useState(false);
-
-//   $(".navMobile__burgericon").on("click", function() {
-//     $(".nav__container").slideToggle(200);
-//   });
-
-//   $(window).on("resize", function() {
-//     if ($(window).width() > 767) {
-//       $(".nav__container").css("display", "flex");
-//     }
-//   });
-// })();
   const navContainer = React.createRef();
 
 

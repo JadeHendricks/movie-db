@@ -53,7 +53,7 @@ const PeoplesummaryState = props => {
 
     dispatch({
       type: FETCH_VIDEOS,
-      payload: data.results
+      payload: data.results.slice(0, 9)
     });
   }
 

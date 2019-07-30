@@ -50,7 +50,7 @@
     border-radius: 0.4rem;
     padding: 3rem;
     color: $white;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
     visibility: hidden;
     opacity: 0;
     & .rating {
@@ -132,6 +132,8 @@
     border-radius: 0.4rem;
     cursor: pointer;
     margin: 0 auto 0.5rem auto;
+    width: 15rem;
+    object-fit: contain;
   }
   &__name {
     display: block;

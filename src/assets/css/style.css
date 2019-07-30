@@ -10,7 +10,12 @@ html {
 
 body {
   box-sizing: border-box;
-  background: linear-gradient(165deg, #144389 0%, #0aaee4 70%);
+  background: #0f0c29;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   position: relative;
   min-height: 100vh; }
 
@@ -590,7 +595,7 @@ a.button {
 
 .card {
   background-color: #ffffff;
-  border-radius: 0.6rem;
+  border-radius: 0.2rem;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25); }
   .card__title {
     margin-bottom: 4rem;
@@ -606,17 +611,19 @@ a.button {
 .movieCard {
   color: #0aaee4;
   margin-bottom: 3rem;
-  width: 23.5%; }
+  width: 23.5%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2), 0 2px 15px rgba(0, 0, 0, 0.8); }
   .movieCard__image {
     height: 20rem;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
     background-color: #131722; }
   .movieCard__title {
     color: #131722;
-    margin-top: 1rem;
+    margin-top: 3rem;
     display: inline-block;
     font-size: 1.6rem;
+    font-weight: 600;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -636,7 +643,8 @@ a.button {
     cursor: pointer;
     margin-top: 1rem;
     text-decoration: none;
-    color: #0aaee4; }
+    color: #0aaee4;
+    font-weight: 600; }
     .movieCard__viewmore span {
       position: relative;
       left: 0;
@@ -645,7 +653,7 @@ a.button {
       left: 0.5rem; }
   .movieCard__categories {
     color: currentColor;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     display: block; }
   .movieCard .rating {
     color: currentColor;
@@ -910,7 +918,7 @@ a.button {
     border-radius: 0.4rem;
     padding: 3rem;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
     visibility: hidden;
     opacity: 0; }
     .movieSliderSlide__overlay .rating {
@@ -972,7 +980,9 @@ a.button {
     height: 18rem;
     border-radius: 0.4rem;
     cursor: pointer;
-    margin: 0 auto 0.5rem auto; }
+    margin: 0 auto 0.5rem auto;
+    width: 15rem;
+    object-fit: contain; }
   .actorSliderSlide__name {
     display: block;
     text-align: center;
@@ -1043,12 +1053,21 @@ a.button {
 
 .trailers {
   display: flex;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  flex-wrap: wrap; }
   .trailers__iframe {
-    flex: 0 1 32%;
-    margin-right: 2%; }
+    flex: 0 1 33.33333%; }
+
+@media screen and (max-width: 991px) {
+  .trailers__iframe {
+    flex: 0 1 50%; } }
+
+@media screen and (max-width: 991px) {
+  .trailers__iframe {
+    flex: 0 1 100%;
+    margin-bottom: 2rem; }
     .trailers__iframe:last-child {
-      margin-right: 0; }
+      margin-bottom: 0; } }
 
 .header {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) center center/cover no-repeat, url("https://cdn.wallpapersafari.com/4/44/YfT0Oo.jpg") top center/cover no-repeat; }

@@ -1,6 +1,6 @@
 .card {
   background-color: $white;
-  border-radius: 0.6rem;
+  border-radius: 0.2rem;
   @include shadow;
 
   &__title {
@@ -20,17 +20,19 @@
   color: $lightBlue;
   margin-bottom: 3rem;
   width: 23.5%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.20), 0 2px 15px rgba(0, 0, 0, 0.8);
   &__image {
     height: 20rem;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
     background-color: $black;
   }
   &__title {
     color: $black;
-    margin-top: 1rem;
+    margin-top: 3rem;
     display: inline-block;
     font-size: 1.6rem;
+    font-weight: 600;
     width: 100%;
     @include ellipses;
   }
@@ -48,6 +50,7 @@
     margin-top: 1rem;
     text-decoration: none;
     color: $lightBlue;
+    font-weight: 600;
     span {
       position: relative;
       left: 0;
@@ -59,7 +62,7 @@
   }
   &__categories {
     color: currentColor;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     display: block;
   }
   & .rating {
