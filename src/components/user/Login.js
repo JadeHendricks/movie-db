@@ -14,7 +14,7 @@ const Login = () => {
             <label htmlFor="password" className="formGroup__label">Password</label>
             <input type="password" id="password" className="input--grey" placeholder="••••••••" required />
           </div>
-          <button className="button button--lightBlue" type="submit">Login</button>
+          <button className="button button--purple" type="submit">Login</button>
         </div>
       </form>
     </section>

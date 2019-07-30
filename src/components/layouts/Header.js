@@ -44,7 +44,7 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
             { 
               window.location.href.endsWith(`${id}`) ? null : 
               <li className="headerMainMovie__li">
-                <Link to={`/movie-summary/${id}`} className="button button--lightBlue">View info</Link>
+                <Link to={`/movie-summary/${id}`} className="button button--purple">View info</Link>
               </li>
             }
             <li className="headerMainMovie__li">

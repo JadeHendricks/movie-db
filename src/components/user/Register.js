@@ -22,7 +22,7 @@ const Register = () => {
             <label htmlFor="confirmPassword" className="formGroup__label">Confirm password</label>
             <input type="password" id="confirmPassword" className="input--grey" placeholder="••••••••" required />
           </div>
-          <button className="button button--lightBlue" type="submit">Sign up</button>
+          <button className="button button--purple" type="submit">Sign up</button>
         </div>
       </form>
     </section>

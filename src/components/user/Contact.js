@@ -22,7 +22,7 @@ const Contact = () => {
             <label htmlFor="message" className="formGroup__label">Message</label>
             <textarea className="textarea--grey" name="message" id="message"></textarea>
           </div>
-          <button className="button button--lightBlue" type="submit">Login</button>
+          <button className="button button--purple" type="submit">Login</button>
         </div>
       </form>
     </section>

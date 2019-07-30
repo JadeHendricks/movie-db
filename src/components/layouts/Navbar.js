@@ -57,7 +57,7 @@ const Navbar = (props) => {
                     <Link className="button button--skeleton" to="/login" type="button">Log in</Link>
                 </li>
                 <li className="nav__li">
-                  <Link className="button button--lightBlue" to="/register" type="button">Sign up</Link>
+                  <Link className="button button--purple" to="/register" type="button">Sign up</Link>
                 </li>
             </ul>
           </div>

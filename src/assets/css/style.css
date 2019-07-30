@@ -49,12 +49,14 @@ body {
     flex-wrap: wrap; }
   .searchResults__title {
     color: currentColor;
-    font-weight: 600;
-    border-bottom: 0.2rem solid #0aaee4;
+    font-weight: 400;
+    border-bottom: 0.2rem solid #302b63;
     padding-bottom: 2rem;
     margin: 0 auto;
     margin-bottom: 6rem;
-    width: 55rem; }
+    width: 90%;
+    text-align: center;
+    font-size: 4.2rem; }
 
 .box {
   background: #ffffff;
@@ -132,11 +134,14 @@ body {
 
 .rating {
   color: #ffffff;
-  border: 0.1rem solid #0aaee4;
+  border: 0.1rem solid #302b63;
   border-radius: 0.6rem;
   padding: 0.1rem 1rem;
   font-size: 1.2rem;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25); }
+
+.header .rating {
+  border: 0.1rem solid #ffffff; }
 
 *,
 html,
@@ -365,8 +370,8 @@ strong {
 .black {
   color: #131722; }
 
-.lightBlue {
-  color: #0aaee4; }
+.purple {
+  color: #302b63; }
 
 @media screen and (max-width: 767px) {
   .onlyDesktop {
@@ -395,7 +400,7 @@ strong {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
 
 .loader-container {
-  background: linear-gradient(135deg, #144389 0%, #0aaee4 71%);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
   height: 100vh;
   opacity: 1;
   position: fixed;
@@ -487,7 +492,7 @@ label {
   border-bottom: 2px solid transparent; }
   .input--grey:focus {
     outline: none;
-    border-bottom: 2px solid #0aaee4; }
+    border-bottom: 2px solid #302b63; }
 
 .textarea--grey {
   display: block;
@@ -507,7 +512,7 @@ label {
   height: 12rem; }
   .textarea--grey:focus {
     outline: none;
-    border-bottom: 2px solid #0aaee4; }
+    border-bottom: 2px solid #302b63; }
 
 .photoUpload {
   display: flex;
@@ -528,16 +533,16 @@ label {
     position: absolute;
     z-index: -1; }
     .photoUpload__upload + label {
-      color: #0aaee4;
+      color: #302b63;
       display: inline-block;
       text-decoration: none;
-      border-bottom: 1px solid #0aaee4;
+      border-bottom: 1px solid #302b63;
       padding: 3px;
       -webkit-transition: all 0.2s;
       transition: all 0.2s;
       cursor: pointer; }
       .photoUpload__upload + label:hover {
-        background-color: #0aaee4;
+        background-color: #302b63;
         color: #ffffff;
         -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -566,16 +571,16 @@ label {
   transition: 0.4s all; }
   .button--white {
     background-color: #ffffff;
-    color: #0aaee4; }
+    color: #302b63; }
     .button--white:hover {
       background-color: #cccccc; }
-  .button--lightBlue {
-    background-color: #0aaee4; }
-    .button--lightBlue:hover {
-      background-color: #066382; }
+  .button--purple {
+    background-color: #302b63; }
+    .button--purple:hover {
+      background-color: #0e0c1c; }
   .button--skeleton {
-    border: 0.1rem solid #0aaee4;
-    color: #0aaee4; }
+    border: 0.1rem solid #ffffff;
+    color: #ffffff; }
     .button--skeleton:hover {
       background-color: #ffffff;
       border: 0.1rem solid #ffffff; }
@@ -599,7 +604,7 @@ a.button {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25); }
   .card__title {
     margin-bottom: 4rem;
-    color: #0aaee4;
+    color: #302b63;
     font-weight: 500; }
 
 .movieCards {
@@ -609,7 +614,7 @@ a.button {
   margin-top: 3rem; }
 
 .movieCard {
-  color: #0aaee4;
+  color: #302b63;
   margin-bottom: 3rem;
   width: 23.5%;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2), 0 2px 15px rgba(0, 0, 0, 0.8); }
@@ -643,7 +648,7 @@ a.button {
     cursor: pointer;
     margin-top: 1rem;
     text-decoration: none;
-    color: #0aaee4;
+    color: #302b63;
     font-weight: 600; }
     .movieCard__viewmore span {
       position: relative;
@@ -689,7 +694,7 @@ a.button {
   .profileCard__top {
     padding-bottom: 4rem;
     margin-bottom: 6rem;
-    border-bottom: 1px solid #0aaee4; }
+    border-bottom: 1px solid #302b63; }
     .profileCard__top::after {
       content: "";
       display: table;
@@ -704,10 +709,12 @@ a.button {
 .searchCard {
   width: 18%;
   margin-right: 2.5%;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2), 0 2px 15px rgba(0, 0, 0, 0.8); }
   .searchCard a {
     text-decoration: none;
-    color: #ffffff;
+    color: #302b63;
     cursor: pointer; }
     .searchCard a:hover .searchCard__image {
       opacity: 1; }
@@ -715,21 +722,20 @@ a.button {
     width: 100%;
     height: 15rem;
     object-fit: cover;
-    border-radius: 6px;
     opacity: 0.85;
     transition: all 0.4s; }
   .searchCard__content {
-    padding: 0.5rem; }
+    padding: 0.5rem 1rem; }
   .searchCard__title {
-    font-size: 1.6rem;
-    width: 95%;
+    font-size: 1.4rem;
+    width: 98%;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
   .searchCard__desc {
     font-size: 1.2rem;
-    width: 95%;
+    width: 98%;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
@@ -773,7 +779,7 @@ a.button {
 @media screen and (max-width: 991px) {
   .card__title {
     margin-bottom: 2rem;
-    color: #0aaee4;
+    color: #302b63;
     font-weight: 500; }
   .movieCard {
     width: 49%; }
@@ -893,10 +899,12 @@ a.button {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
-    fill: #0aaee4; }
+    fill: #302b63; }
 
 .movieSliderSlide {
   margin: 0 0.5rem; }
+  .movieSliderSlide .rating {
+    border: 0.1rem solid #ffffff; }
   .movieSliderSlide__image {
     height: 22rem;
     background-color: #131722;
@@ -935,13 +943,15 @@ a.button {
     position: absolute;
     right: 1.5rem;
     bottom: 1.5rem;
-    color: #0aaee4;
+    color: #ffffff;
     font-size: 1.4rem; }
 
 .sliderWrapper {
   padding: 3rem 0 4rem 0;
   margin-top: 5rem;
   background-color: #131722; }
+  .sliderWrapper .rating {
+    border: 0.1rem solid #302b63; }
   .sliderWrapper .heading {
     margin: 0 auto;
     margin-bottom: 2rem; }
@@ -952,11 +962,13 @@ a.button {
   .sliderWrapper .movieSliderSlide__image {
     background-color: #f5f6f6; }
   .sliderWrapper .movieSlider__arrowContainer {
-    background-color: #0aaee4; }
+    background-color: #302b63; }
   .sliderWrapper .movieSlider__arrowContainer .movieSlider__arrow {
     fill: #ffffff; }
   .sliderWrapper .movieSliderSlide__desc {
     font-weight: 600; }
+  .sliderWrapper .movieSliderSlide__link {
+    color: #302b63; }
   .sliderWrapper .movieSliderSlide__overlay {
     color: #131722;
     background-color: #d6d8d8; }
@@ -964,7 +976,7 @@ a.button {
       position: absolute;
       right: 1rem;
       top: 1rem;
-      color: #0aaee4; }
+      color: #302b63; }
 
 .actorSlider {
   margin: 5rem -0.5rem 10rem -0.5rem;
@@ -972,7 +984,7 @@ a.button {
   .actorSlider .movieSlider__arrowContainer {
     background-color: #ffffff; }
   .actorSlider .movieSlider__arrowContainer .movieSlider__arrow {
-    fill: #0aaee4; }
+    fill: #302b63; }
 
 .actorSliderSlide {
   margin: 0 0.5rem; }
@@ -1044,7 +1056,7 @@ a.button {
   .pagination__icon {
     width: 1.5rem;
     height: 1.5rem;
-    fill: #0aaee4; }
+    fill: #302b63; }
 
 @media screen and (max-width: 991px) {
   .pagination__icon {
@@ -1185,7 +1197,7 @@ a.button {
       border-radius: 50%;
       width: 4rem;
       height: 4rem;
-      background-color: #0aaee4;
+      background-color: #302b63;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1194,7 +1206,7 @@ a.button {
       .nav__li > div:hover {
         background-color: #ffffff; }
       .nav__li > div:hover .nav__usernav-icon {
-        fill: #0aaee4; }
+        fill: #302b63; }
   .nav__usernav-icon {
     width: 2rem;
     height: 2rem;
@@ -1290,10 +1302,10 @@ a.button {
     cursor: pointer;
     transition: all 0.6s; }
     .footer__icon:link, .footer__icon:hover {
-      fill: #0aaee4; }
+      fill: #302b63; }
   .footer__logo {
     font-size: 2.2rem;
-    color: #0aaee4;
+    color: #ffffff;
     font-weight: 700;
     margin-right: 3rem;
     text-decoration: none; }

@@ -55,12 +55,14 @@ body {
   }
   &__title {
     color: currentColor;
-    font-weight: 600;
-    border-bottom: 0.2rem solid $lightBlue;
+    font-weight: 400;
+    border-bottom: 0.2rem solid $purple;
     padding-bottom: 2rem;
     margin: 0 auto;
     margin-bottom: 6rem;
-    width: 55rem;
+    width: 90%;
+    text-align: center;
+    font-size: 4.2rem;
   }
 }
 
@@ -167,9 +169,14 @@ body {
 
 .rating {
   color: #ffffff;
-  border: 0.1rem solid #0aaee4;
+  border: 0.1rem solid $purple;
   border-radius: 0.6rem;
   padding: 0.1rem 1rem;
   font-size: 1.2rem;
   @include shadow;
+}
+.header {
+  .rating {
+    border: 0.1rem solid $white;
+  }
 }

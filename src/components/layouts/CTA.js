@@ -16,7 +16,7 @@ const CTA = () => {
           <h3 className="cta__title">
             Receive information on the latest hit movies straight to your inbox.
           </h3>
-          <button className="button button--lightBlue">Subscribe</button>
+          <button className="button button--purple">Subscribe</button>
       </div>
     </section>
   )

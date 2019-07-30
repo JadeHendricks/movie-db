@@ -51,7 +51,7 @@ label {
   border-bottom: 2px solid transparent;
   &:focus {
     outline: none;
-    border-bottom: 2px solid $lightBlue;
+    border-bottom: 2px solid $purple;
   }
 }
 
@@ -73,7 +73,7 @@ label {
   height: 12rem;
   &:focus {
     outline: none;
-    border-bottom: 2px solid $lightBlue;
+    border-bottom: 2px solid $purple;
   }
 }
 
@@ -97,16 +97,16 @@ label {
     position: absolute;
     z-index: -1;
     & + label {
-      color: $lightBlue;
+      color: $purple;
       display: inline-block;
       text-decoration: none;
-      border-bottom: 1px solid $lightBlue;
+      border-bottom: 1px solid $purple;
       padding: 3px;
       -webkit-transition: all 0.2s;
       transition: all 0.2s;
       cursor: pointer;
       &:hover {
-        background-color: $lightBlue;
+        background-color: $purple;
         color: $white;
         -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);

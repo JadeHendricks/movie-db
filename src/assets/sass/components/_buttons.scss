@@ -14,20 +14,20 @@
   transition: 0.4s all;
   &--white {
     background-color: $white;
-    color: $lightBlue;
+    color: $purple;
     &:hover {
       background-color: darken($white, 20%);
     }
   }
-  &--lightBlue {
-    background-color: $lightBlue;
+  &--purple {
+    background-color: $purple;
     &:hover {
-      background-color: darken($lightBlue, 20%);
+      background-color: darken($purple, 20%);
     }
   }
   &--skeleton {
-    border: 0.1rem solid $lightBlue;
-    color: $lightBlue;
+    border: 0.1rem solid $white;
+    color: $white;
     &:hover {
       background-color: $white;
       border: 0.1rem solid $white;

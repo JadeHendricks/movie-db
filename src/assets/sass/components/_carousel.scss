@@ -22,11 +22,14 @@
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
-    fill: $lightBlue;
+    fill: $purple;
   }
 }
 .movieSliderSlide {
   margin: 0 0.5rem;
+  .rating {
+    border: 0.1rem solid $white;
+  }
   &__image {
     height: 22rem;
     background-color: $black;
@@ -71,7 +74,7 @@
     position: absolute;
     right: 1.5rem;
     bottom: 1.5rem;
-    color: $lightBlue;
+    color: $white;
     font-size: 1.4rem;
   }
 }
@@ -80,6 +83,9 @@
   padding: 3rem 0 4rem 0;
   margin-top: 5rem;
   background-color: $black;
+  .rating {
+    border: 0.1rem solid $purple;
+  }
   & .heading {
     margin: 0 auto;
     margin-bottom: 2rem;
@@ -94,13 +100,16 @@
     background-color: $lightGrey;
   }
   & .movieSlider__arrowContainer {
-    background-color: $lightBlue;
+    background-color: $purple;
   }
   & .movieSlider__arrowContainer .movieSlider__arrow {
     fill: $white;
   }
   .movieSliderSlide__desc {
     font-weight: 600;
+  }
+  .movieSliderSlide__link {
+    color: $purple;
   }
   & .movieSliderSlide__overlay {
     color: $black;
@@ -109,7 +118,7 @@
       position: absolute;
       right: 1rem;
       top: 1rem;
-      color: $lightBlue;
+      color: $purple;
     }
   }
 }
@@ -121,7 +130,7 @@
     background-color: $white;
   }
   & .movieSlider__arrowContainer .movieSlider__arrow {
-    fill: $lightBlue;
+    fill: $purple;
   }
 }
 
