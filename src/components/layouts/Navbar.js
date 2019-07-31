@@ -29,7 +29,7 @@ const Navbar = (props) => {
     setRedirect(true);
   }
 
-  const openNav = () => {
+  const toggleNav = () => {
     navContainer.current.classList.toggle("navToggle");
   }
 
@@ -39,8 +39,8 @@ const Navbar = (props) => {
       <nav className="nav">
         <div className="container">
           <div className="navMobile">
-              <Link className="nav__logo" to="/">MovieDB</Link>
-              <svg className="navMobile__burgericon" onClick={openNav}>
+              <Link className="nav__logo" to="/" onClick={toggleNav}>MovieDB</Link>
+              <svg className="navMobile__burgericon" onClick={toggleNav}>
                 <use xlinkHref={`${svg}#icon-menu`}></use>
               </svg>
           </div>
@@ -54,10 +54,10 @@ const Navbar = (props) => {
             </form>
             <ul className="nav__ul">
                 <li className="nav__li">
-                    <Link className="button button--skeleton" to="/login" type="button">Log in</Link>
+                    <Link className="button button--skeleton" to="/login" type="button" onClick={toggleNav}>Log in</Link>
                 </li>
                 <li className="nav__li">
-                  <Link className="button button--purple" to="/register" type="button">Sign up</Link>
+                  <Link className="button button--purple" to="/register" type="button" onClick={toggleNav}>Sign up</Link>
                 </li>
             </ul>
           </div>
