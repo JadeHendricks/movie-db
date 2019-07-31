@@ -3,6 +3,14 @@ import HeaderContext from './headerContext';
 import HeaderReducer from './headerReducer';
 import { FETCH_TRAILER } from '../types';
 
+let moviedbClientID;
+
+if (process.env.NODE_ENV !== "production") {
+  moviedbClientID = process.env.REACT_APP_MOVIEDB_CLIENT_ID;
+} else {
+  moviedbClientID = process.env.MOVIEDB_CLIENT_ID;
+}
+
 const HeaderState = props => {
   const initialState = {
     video: ""
@@ -12,7 +20,7 @@ const HeaderState = props => {
 
   const fetchTrailer = async (id) => {
     if(!id) return;
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${moviedbClientID}&language=en-US&page=1`);
     const data = await response.json();
     if(!data.results[0]) return;
 
