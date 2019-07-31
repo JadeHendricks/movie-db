@@ -6,14 +6,6 @@ import {
   FETCH_TOTAL_RESULTS, 
   NEXT_PAGE, 
   RESET_PAGE } from '../types';
-
-  let moviedbClientID;
-
-  if (process.env.NODE_ENV !== "production") {
-    moviedbClientID = process.env.REACT_APP_MOVIEDB_CLIENT_ID;
-  } else {
-    moviedbClientID = process.env.MOVIEDB_CLIENT_ID;
-  }
   
 const SearchState = props => {
   const initialState = {
@@ -32,7 +24,7 @@ const SearchState = props => {
   }
 
   const fetchSearch = async (query) => {
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${moviedbClientID}&query=${query}&language=en-US&page=1&include_adult=false`);
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&query=${query}&language=en-US&page=1&include_adult=false`);
     const data = await response.json();
     
     dispatch({
@@ -48,7 +40,7 @@ const SearchState = props => {
   }
 
   const nextPage = async (pageNumber, query) => {
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${moviedbClientID}&query=${query}&language=en-US&page=${pageNumber}&include_adult=false`);
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&query=${query}&language=en-US&page=${pageNumber}&include_adult=false`);
     const data = await response.json();
 
     dispatch({

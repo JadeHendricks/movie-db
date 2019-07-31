@@ -9,14 +9,6 @@ import {
   GET_LATEST_MOVIES
 } from "../types";
 
-let moviedbClientID;
-
-if (process.env.NODE_ENV !== "production") {
-  moviedbClientID = process.env.REACT_APP_MOVIEDB_CLIENT_ID;
-} else {
-  moviedbClientID = process.env.MOVIEDB_CLIENT_ID;
-}
-
  const IndexState = props => {
 
   const initialState = {
@@ -31,7 +23,7 @@ if (process.env.NODE_ENV !== "production") {
   const [state, dispatch] = useReducer(IndexReducer, initialState);
 
   const getMostPopularMovie = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${moviedbClientID}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({
@@ -41,7 +33,7 @@ if (process.env.NODE_ENV !== "production") {
   }
 
   const getPopularMovies = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${moviedbClientID}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({
@@ -51,7 +43,7 @@ if (process.env.NODE_ENV !== "production") {
   }
 
   const getUpcomingMovies = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${moviedbClientID}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({
@@ -61,7 +53,7 @@ if (process.env.NODE_ENV !== "production") {
   }
 
   const getTopRatedMovies = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${moviedbClientID}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({
@@ -71,7 +63,7 @@ if (process.env.NODE_ENV !== "production") {
   }
   
   const getLatestMovies = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${moviedbClientID}&language=en-US`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US`);
     const data = await response.json();
 
     dispatch({
