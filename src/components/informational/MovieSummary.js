@@ -85,7 +85,7 @@ const MovieSummary = ({ match }) => {
             <section key={review.id} className="movieReviews">
               <h4 className="movieReviews__h4">{ review.author }</h4>
               <p className="movieReviews__p">{ trimLength(review.content, 500) }...</p>
-              <Link className="movieReviews__link" href={ review.url } to={""}>See full review <span>&rarr;</span></Link>
+              <a className="movieReviews__link" target="_blank" href={ review.url } >See full review <span>&rarr;</span></a>
             </section>
           ))} 
         </div> :null
