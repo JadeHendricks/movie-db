@@ -4,7 +4,6 @@ import Cards from "../cards/Cards";
 import CTA from "../layouts/CTA";
 import MovieSlider from "../slider/MovieSlider";
 import Loader from "../layouts/Loader";
-
 import IndexContext from "../../context/index/indexContext";
 
 const Index = () => {

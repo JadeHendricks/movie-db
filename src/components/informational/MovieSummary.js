@@ -3,7 +3,6 @@ import Header from "../layouts/Header";
 import ActorSlider from "../slider/ActorSlider";
 import Cards from "../cards/Cards";
 import Loader from "../layouts/Loader";
-import { Link } from "react-router-dom";
 
 import MoviesummaryContext from "../../context/moviesummary/moviesummaryContext";
 
@@ -85,7 +84,7 @@ const MovieSummary = ({ match }) => {
             <section key={review.id} className="movieReviews">
               <h4 className="movieReviews__h4">{ review.author }</h4>
               <p className="movieReviews__p">{ trimLength(review.content, 500) }...</p>
-              <a className="movieReviews__link" target="_blank" href={ review.url } >See full review <span>&rarr;</span></a>
+              <a className="movieReviews__link" target="_blank" rel="noopener noreferrer" href={ review.url } >See full review <span>&rarr;</span></a>
             </section>
           ))} 
         </div> :null
