@@ -11,13 +11,14 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
     video, 
     fetchTrailer} = headerContext;
 
+
   let imagePath = 
     backdrop_path ? { backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original${backdrop_path})`} 
     : { backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${notFoundImage})`}; 
 
   let imageOptions = {
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center center",
+    backgroundPosition: "0 center",
     backgroundSize: "cover"
   };
 

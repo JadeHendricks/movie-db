@@ -1,11 +1,5 @@
-.header {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) center
-      center / cover no-repeat,
-    url("https://cdn.wallpapersafari.com/4/44/YfT0Oo.jpg") top center/cover
-      no-repeat;
-}
 .headerMainMovie {
-  padding: 42rem 0 4rem 0;
+  padding: 42rem 0 5rem 0;
   color: $white;
   &__title {
     color: currentColor;

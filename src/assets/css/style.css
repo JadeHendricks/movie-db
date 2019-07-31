@@ -908,7 +908,6 @@ a.button {
   .movieSliderSlide__image {
     height: 22rem;
     background-color: #131722;
-    border-radius: 0.4rem;
     position: relative;
     overflow: hidden;
     cursor: pointer; }
@@ -923,7 +922,6 @@ a.button {
     left: 0;
     right: 0;
     bottom: -2.5rem;
-    border-radius: 0.4rem;
     padding: 3rem;
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.8);
@@ -1044,7 +1042,8 @@ a.button {
   .pagination button {
     display: flex;
     align-items: center;
-    position: relative; }
+    position: relative;
+    width: 15rem; }
   .pagination__prev {
     margin-right: 1rem; }
     .pagination__prev .pagination__icon {
@@ -1081,11 +1080,8 @@ a.button {
     .trailers__iframe:last-child {
       margin-bottom: 0; } }
 
-.header {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) center center/cover no-repeat, url("https://cdn.wallpapersafari.com/4/44/YfT0Oo.jpg") top center/cover no-repeat; }
-
 .headerMainMovie {
-  padding: 42rem 0 4rem 0;
+  padding: 42rem 0 5rem 0;
   color: #ffffff; }
   .headerMainMovie__title {
     color: currentColor;
