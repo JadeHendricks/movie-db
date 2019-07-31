@@ -27,10 +27,11 @@ const Navbar = (props) => {
     setQuery(search);
     setSearch("");
     setRedirect(true);
+    navContainer.current.classList.toggle("navToggle");
   }
 
   const toggleNav = () => {
-    navContainer.current.classList.toggle("navToggle");
+      navContainer.current.classList.toggle("navToggle");
   }
 
   return (
@@ -39,7 +40,7 @@ const Navbar = (props) => {
       <nav className="nav">
         <div className="container">
           <div className="navMobile">
-              <Link className="nav__logo" to="/" onClick={toggleNav}>MovieDB</Link>
+              <Link className="nav__logo" to="/">MovieDB</Link>
               <svg className="navMobile__burgericon" onClick={toggleNav}>
                 <use xlinkHref={`${svg}#icon-menu`}></use>
               </svg>
