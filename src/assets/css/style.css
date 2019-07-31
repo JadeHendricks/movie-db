@@ -1148,6 +1148,12 @@ a.button {
     .headerActor__li {
       font-size: 1.4rem; } }
 
+@media screen and (max-width: 520px) {
+  .headerMainMovie {
+    padding: 18rem 0 4rem 0; }
+  .header {
+    background-position: center !important; } }
+
 .nav {
   padding: 1.5rem 0;
   background-color: #131722;

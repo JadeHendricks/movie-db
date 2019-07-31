@@ -87,3 +87,12 @@
     }
   }
 }
+
+@media screen and (max-width: 520px) {
+  .headerMainMovie {
+    padding: 18rem 0 4rem 0;
+  }
+  .header {
+    background-position: center!important;
+  }
+}
