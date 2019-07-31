@@ -9,6 +9,7 @@ import Profile from "./components/user/Profile";
 import MovieSummary from "./components/informational/MovieSummary";
 import ActorSummary from "./components/informational/ActorSummary";
 import SearchResults from "./components/informational/SearchResults";
+import NotFound from "./components/layouts/NotFound";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './assets/css/style.css';
 
@@ -37,6 +38,7 @@ const App = () => {
                     <Route path="/actor-summary/:id" component={ActorSummary} />
                     <Route path="/search-results" component={SearchResults} />
                     <Route path="/" exact component={Index} />
+                    <Route component={NotFound} />
                   </Switch>
                   <Footer />
                 </div>
