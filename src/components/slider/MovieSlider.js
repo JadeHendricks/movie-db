@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import svg from "../../images/sprite.svg";
+import notFoundImage from "../../images/no_image_found.png";
 
 const MovieSlider = ({ slide }) => {
 
@@ -30,7 +31,7 @@ const MovieSlider = ({ slide }) => {
       <Slider {...settings} className="movieSlider">
       {slide.map(movie => (
         <div key={movie.id} className="movieSliderSlide">
-          <div className="movieSliderSlide__image" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`, backgroundRepeat: "no-repeat", backgroundPosition: "center center", backgroundSize: "cover"}}>
+          <div className="movieSliderSlide__image" style={{ backgroundImage: movie.backdrop_path ? `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})` : `url(${notFoundImage})`, backgroundRepeat: "no-repeat", backgroundPosition: "center center", backgroundSize: "cover" }}>
               <div className="movieSliderSlide__overlay">
                   <h5 className="movieSliderSlide__title">{ movie.title }</h5>
                   <p className="movieSliderSlide__desc">{ trimLength(movie.overview, 250) }...</p>

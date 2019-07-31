@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
 import HeaderContext from "../../context/header/headerContext";
+import notFoundImage from "../../images/no_image_found.png";
 
 const Header = ({ movie: { backdrop_path, title, overview, release_date, original_language, vote_average, id } }) => {
 
@@ -10,12 +11,18 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
     video, 
     fetchTrailer} = headerContext;
 
-  const headerBackgroundImage = {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original${backdrop_path})`,
+  let imagePath = 
+    backdrop_path ? { backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original${backdrop_path})`} 
+    : { backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${notFoundImage})`}; 
+
+  let imageOptions = {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
     backgroundSize: "cover"
-  }
+  };
+
+  let backdropImage = Object.assign(imagePath, imageOptions);
+
 
   useEffect(() => {
     fetchTrailer(id);
@@ -27,7 +34,7 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
   }
 
   return (
-    <header className="header" style={ headerBackgroundImage }>
+    <header className="header" style={ backdropImage }>
       <div className="container">
         <div className="headerMainMovie">
           <h1 className="headerMainMovie__title uppercase">{ title }</h1>
