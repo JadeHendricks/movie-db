@@ -1,4 +1,4 @@
-import { FETCH_RESULTS, FETCH_TOTAL_RESULTS, NEXT_PAGE } from '../types';
+import { FETCH_RESULTS, FETCH_TOTAL_RESULTS, NEXT_PAGE, RESET_PAGE } from '../types';
 
 export default ( state, action ) => {
   switch (action.type) {
@@ -13,6 +13,11 @@ export default ( state, action ) => {
         totalResults: action.payload
       };
       case NEXT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload
+      };
+      case RESET_PAGE:
       return {
         ...state,
         currentPage: action.payload

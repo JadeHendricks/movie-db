@@ -15,6 +15,7 @@ const SearchResults = () => {
     totalResults, 
     currentPage, 
     fetchSearch, 
+    resetPage,
     nextPage } = searchContext;
 
   const query = decodeURI(window.location.href.split("/").pop());
@@ -23,12 +24,13 @@ const SearchResults = () => {
 
   useEffect(() => {
     fetchSearch(query);
-    
+    resetPage();
     setTimeout(() => {
       setLoading(false);
     }, 500); 
   // eslint-disable-next-line
   }, [query])
+
 
   const numberOfPages = Math.floor(totalResults / 20);
 

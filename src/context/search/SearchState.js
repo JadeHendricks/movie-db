@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import SearchContext from './searchContext';
 import SearchReducer from './searchReducer';
-import { FETCH_RESULTS, FETCH_TOTAL_RESULTS, NEXT_PAGE } from '../types';
+import { FETCH_RESULTS, FETCH_TOTAL_RESULTS, NEXT_PAGE, RESET_PAGE } from '../types';
 
 const SearchState = props => {
 
@@ -13,6 +13,13 @@ const SearchState = props => {
   };
 
   const [state, dispatch] = useReducer(SearchReducer, initialState);
+
+  const resetPage = () => {
+    dispatch({
+      type: RESET_PAGE,
+      payload: 1
+    })
+  }
 
   const fetchSearch = async (query) => {
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`);
@@ -53,6 +60,7 @@ const SearchState = props => {
         totalResults: state.totalResults,
         currentPage: state.currentPage,
         fetchSearch,
+        resetPage,
         nextPage
       }}
     >

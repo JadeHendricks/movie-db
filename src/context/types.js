@@ -12,6 +12,7 @@ export const FETCH_TRAILER = "FETCH_TRAILER";
 export const FETCH_RESULTS = "FETCH_RESULTS";
 export const FETCH_TOTAL_RESULTS = "FETCH_TOTAL_RESULTS";
 export const NEXT_PAGE = "NEXT_PAGE";
+export const RESET_PAGE = "RESET_PAGE";
 
 //ActorSummary
 export const FETCH_PERSON = "FETCH_PERSON";
