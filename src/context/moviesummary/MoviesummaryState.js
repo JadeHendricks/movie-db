@@ -4,9 +4,6 @@ import MoviesummaryReducer from './moviesummaryReducer';
 import { FETCH_MOVIE, FETCH_MOVIE_REVIEWS, FETCH_CAST, FETCH_VIDEOS, FETCH_SIMILAR_MOVIES } from '../types';
 
 const PeoplesummaryState = props => {
-
-  const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
-
   const initialState = {
     movie: {},
     reviews: [],
@@ -18,7 +15,7 @@ const PeoplesummaryState = props => {
   const [state, dispatch] = useReducer(MoviesummaryReducer, initialState);
 
   const fetchMovie = async (id) => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({
@@ -28,7 +25,7 @@ const PeoplesummaryState = props => {
   }
 
   const fetchMovieReviews = async (id) => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({
@@ -38,7 +35,7 @@ const PeoplesummaryState = props => {
   }
 
   const fetchCast = async (id) => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({
@@ -48,7 +45,7 @@ const PeoplesummaryState = props => {
   }
 
   const fetchVideos = async (id) => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({
@@ -58,7 +55,7 @@ const PeoplesummaryState = props => {
   }
 
   const fetchSimilarMovies = async (id) => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
 
     dispatch({

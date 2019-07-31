@@ -4,8 +4,6 @@ import HeaderReducer from './headerReducer';
 import { FETCH_TRAILER } from '../types';
 
 const HeaderState = props => {
-
-  const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
   const initialState = {
     video: ""
   };
@@ -14,7 +12,7 @@ const HeaderState = props => {
 
   const fetchTrailer = async (id) => {
     if(!id) return;
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US&page=1`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US&page=1`);
     const data = await response.json();
     if(!data.results[0]) return;
 

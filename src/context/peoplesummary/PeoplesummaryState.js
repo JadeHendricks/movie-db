@@ -5,8 +5,6 @@ import { FETCH_PERSON, FETCH_MOVIE_CREDITS } from '../types';
 
 const PeoplesummaryState = props => {
 
-  const API_KEY = "e87f29ad6137f88242f3bcd9b94b1af7";
-
   const initialState = {
     personData: {},
     movieCredits: []
@@ -15,7 +13,7 @@ const PeoplesummaryState = props => {
   const [state, dispatch] = useReducer(PeoplesummaryReducer, initialState);
 
   const fetchPerson = async (id) => {
-    const response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=${API_KEY}&language=en-US`);
+    const response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US`);
     const data = await response.json();
 
     dispatch({
@@ -25,7 +23,7 @@ const PeoplesummaryState = props => {
   }
 
   const fetchMovieCredits = async (id) => {
-    const response = await fetch(`https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${API_KEY}&language=en-US`);
+    const response = await fetch(`https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${process.env.REACT_APP_MOVIEDB_CLIENT_ID}&language=en-US`);
     const data = await response.json();
 
     dispatch({
