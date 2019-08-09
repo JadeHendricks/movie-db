@@ -18,7 +18,7 @@ const Header = ({ movie: { backdrop_path, title, overview, release_date, origina
 
   let imageOptions = {
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "0 center",
+    backgroundPosition: "top center",
     backgroundSize: "cover"
   };
 
