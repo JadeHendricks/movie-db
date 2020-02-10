@@ -12,5 +12,5 @@ A site built through [The MovieDB API](https://www.themoviedb.org/), showing all
 A site built with React.js, SASS and [The MovieDB API](https://www.themoviedb.org/).
 State is managed with the Context API.
 
-## Future
-Node.js, express.js, MongoDB and Mongoose for the backend. - TBC
+## View
+[The MovieDB](https://the-movie-db-react.netlify.com/)
